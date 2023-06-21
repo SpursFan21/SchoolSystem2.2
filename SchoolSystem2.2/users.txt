@@ -1,0 +1,5 @@
+admin,admin,admin123,adminID
+teacher,teacher,teacher123,teacherID
+parent,parent,parent123,parentID
+student,student,student123,studentID
+student,student1,student1234,studentID1

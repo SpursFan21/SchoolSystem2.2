@@ -1,0 +1,3 @@
+student:john mcdonald:Math:90,English:85,Science:92
+student1:emma smith:Math:95,English:87,Science:91
+student2:alex turner:Math:88,English:93,Science:90
