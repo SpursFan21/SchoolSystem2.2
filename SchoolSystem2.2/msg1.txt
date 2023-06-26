@@ -1,0 +1,4 @@
+teacher - Remember students we will be having the quiz on thursday now because of thr field trip on friday. [Tue Jun 27 11:11:11 2023
+]
+student - okay thanks for letting us know. [Tue Jun 27 11:12:27 2023
+]
