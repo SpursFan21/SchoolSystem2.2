@@ -131,7 +131,10 @@ public:
         std::cout << "6. Add Teacher" << std::endl;
         std::cout << "7. Add Class" << std::endl;
         std::cout << "8. Add Grade for Student" << std::endl;
-        std::cout << "9. Sign Out" << std::endl;
+        std::cout << "9. View Parent Teacher Message Board" << std::endl;
+        std::cout << "10. View Student Teacher Message Board" << std::endl;
+        std::cout << "11. Sign Out" << std::endl;
+        std::cout << "12. Exit Program " << std::endl;
     }
 };
 
@@ -150,15 +153,20 @@ public:
         type = "Teacher";
     }
 
-    void sendMessage() const {
+    void sendMessage() const { // Parent Teacher Message Boards
         std::string message;
         std::cout << "Enter your message: ";
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::getline(std::cin, message);
 
+        // Get the current timestamp
+        std::time_t current_time = std::time(nullptr);
+        char timestamp[26];
+        ctime_s(timestamp, sizeof(timestamp), &current_time);
+
         std::ofstream file("msg.txt", std::ios::app);
         if (file.is_open()) {
-            file << message << std::endl;
+            file << username << " - " << message << " [" << timestamp << "]" << std::endl;
             file.close();
             std::cout << "Message sent successfully." << std::endl;
         }
@@ -181,6 +189,43 @@ public:
         }
     }
 
+    void sendMessage1() const { // Student and Teacher Message Boards
+        std::string message;
+        std::cout << "Enter your message: ";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::getline(std::cin, message);
+
+        // Get the current timestamp
+        std::time_t current_time = std::time(nullptr);
+        char timestamp[26];
+        ctime_s(timestamp, sizeof(timestamp), &current_time);
+
+        std::ofstream file("msg1.txt", std::ios::app);
+        if (file.is_open()) {
+            file << username << " - " << message << " [" << timestamp << "]" << std::endl;
+            file.close();
+            std::cout << "Message sent successfully." << std::endl;
+        }
+        else {
+            std::cout << "Failed to send message." << std::endl;
+        }
+    }
+
+
+    void viewMessages1() const {
+        std::ifstream file("msg1.txt");
+        if (file.is_open()) {
+            std::string message;
+            while (std::getline(file, message)) {
+                std::cout << message << std::endl;
+            }
+            file.close();
+        }
+        else {
+            std::cout << "No messages available." << std::endl;
+        }
+    }
+
 
     void displayMenu() const override {
         int choice;
@@ -191,10 +236,12 @@ public:
             std::cout << "User ID: " << getId() << std::endl;
             std::cout << "1. Add Grade for Student" << std::endl;
             std::cout << "2. View Grades" << std::endl;
-            std::cout << "3. Send Message" << std::endl;
-            std::cout << "4. View Messages" << std::endl;
-            std::cout << "5. Sign Out" << std::endl;
-            std::cout << "6. Exit Program" << std::endl;
+            std::cout << "3. Send Parent Teacher Message" << std::endl;
+            std::cout << "4. View Parent Teacher Messages" << std::endl;
+            std::cout << "5. Send Student Teacher Message" << std::endl;
+            std::cout << "6. View Student Teacher Messages" << std::endl;
+            std::cout << "7. Sign Out" << std::endl;
+            std::cout << "8. Exit Program" << std::endl;
             std::cout << "Enter your choice: ";
             std::cin >> choice;
 
@@ -288,15 +335,27 @@ public:
                 break;
             }
             case 3:
+                std::cout << "Parent Teacher Message Bored" << std::endl;
                 sendMessage();
                 break;
             case 4:
+                std::cout << "Parent Teacher Message Bored" << std::endl;
                 viewMessages();
                 break;
             case 5:
+                std::cout << "Student Teacher Message Bored" << std::endl;
+                sendMessage1();
+                    break;
+            case 6:
+                std::cout << "Student Teacher Message Bored" << std::endl;
+                viewMessages1();
+                break;
+            case 7:
                 signOut(); // Call the signOut function to sign out and return to the login menu
                 return;
-
+            case 8:
+                std::cout << "exiting program ... " << std::endl;
+                exit(0);
             default:
                 std::cout << "Invalid choice. Please try again." << std::endl;
                 break;
@@ -324,9 +383,14 @@ public:
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::getline(std::cin, message);
 
+        // Get the current timestamp
+        std::time_t current_time = std::time(nullptr);
+        char timestamp[26];
+        ctime_s(timestamp, sizeof(timestamp), &current_time);
+
         std::ofstream file("msg.txt", std::ios::app);
         if (file.is_open()) {
-            file << message << std::endl;
+            file << username << " - " << message << " [" << timestamp << "]" << std::endl;
             file.close();
             std::cout << "Message sent successfully." << std::endl;
         }
@@ -334,6 +398,7 @@ public:
             std::cout << "Failed to send message." << std::endl;
         }
     }
+
 
     void viewMessages() const {
         std::ifstream file("msg.txt");
@@ -358,6 +423,7 @@ public:
             std::cout << "2. Send Message" << std::endl;
             std::cout << "3. View Messages" << std::endl;
             std::cout << "4. Sign Out" << std::endl;;
+            std::cout << "5. Exit Program" << std::endl;
 
             int choice;
             std::cout << "Enter your choice: ";
@@ -368,14 +434,19 @@ public:
                 viewStudentReportCard();
                 break;
             case 2:
+                std::cout << "Parent Teacher Message Bored" << std::endl;
                 sendMessage();
                 break;
             case 3:
+                std::cout << "Parent Teacher Message Bored" << std::endl;
                 viewMessages();
                 break;
             case 4:
                 User::signOut(); // Call the signOut function of the User base class
                 return;
+            case 5:
+                std::cout << "exiting program ... " << std::endl;
+                exit(0);
             default:
                 std::cout << "Invalid choice." << std::endl;
                 break;
@@ -476,6 +547,43 @@ public:
         std::cout << "No grades found for " << getUsername() << std::endl;
     }
 
+    void sendMessage1() const { // Student and Teacher Message Boards
+        std::string message;
+        std::cout << "Enter your message: ";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::getline(std::cin, message);
+
+        // Get the current timestamp
+        std::time_t current_time = std::time(nullptr);
+        char timestamp[26];
+        ctime_s(timestamp, sizeof(timestamp), &current_time);
+
+        std::ofstream file("msg1.txt", std::ios::app);
+        if (file.is_open()) {
+            file << username << " - " << message << " [" << timestamp << "]" << std::endl;
+            file.close();
+            std::cout << "Message sent successfully." << std::endl;
+        }
+        else {
+            std::cout << "Failed to send message." << std::endl;
+        }
+    }
+
+
+    void viewMessages1() const {
+        std::ifstream file("msg1.txt");
+        if (file.is_open()) {
+            std::string message;
+            while (std::getline(file, message)) {
+                std::cout << message << std::endl;
+            }
+            file.close();
+        }
+        else {
+            std::cout << "No messages available." << std::endl;
+        }
+    }
+
     void displayMenu() const override {
         try {
             int choice;
@@ -485,7 +593,10 @@ public:
                 std::cout << "User Type: " << getType() << std::endl;
                 std::cout << "User ID: " << getId() << std::endl;
                 std::cout << "1. View Grades" << std::endl;
+                std::cout << "2. Send Student Teacher Messages" << std::endl;
+                std::cout << "3. View Student Teachere Messages" << std::endl;
                 std::cout << "2. Sign Out" << std::endl;
+                std::cout << "3. Exit Program" << std::endl;
                 std::cout << "Enter your choice: ";
                 std::cin >> choice;
 
@@ -500,8 +611,19 @@ public:
                     viewGrades();
                     break;
                 case 2:
+                    std::cout << "Student Teacher Message Bored" << std::endl;
+                    sendMessage1();
+                    break;
+                case 3:
+                    std::cout << "Student Teacher Message Bored" << std::endl;
+                    viewMessages1();
+                    break;
+                case 4:
                     signOut();
                     return;
+                case 5:
+                    std::cout << "exiting program ... " << std::endl;
+                    exit(0);
                 default:
                     std::cout << "Invalid choice. Please try again." << std::endl;
                     break;
@@ -604,23 +726,6 @@ public:
     }
 };
 
-void sendMessage() {
-    std::string message;
-    std::cout << "Enter your message: ";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::getline(std::cin, message);
-
-    std::ofstream file("msg.txt", std::ios::app);
-    if (file.is_open()) {
-        file << message << std::endl;
-        file.close();
-        std::cout << "Message sent successfully." << std::endl;
-    }
-    else {
-        std::cout << "Failed to send message." << std::endl;
-    }
-}
-
 void viewMessages() {
     std::ifstream file("msg.txt");
     if (file.is_open()) {
@@ -635,9 +740,19 @@ void viewMessages() {
     }
 }
 
-        
-
-
+void viewMessages1() {
+    std::ifstream file("msg1.txt");
+    if (file.is_open()) {
+        std::string message;
+        while (std::getline(file, message)) {
+            std::cout << message << std::endl;
+        }
+        file.close();
+    }
+    else {
+        std::cout << "No messages available." << std::endl;
+    }
+}
 
 
 // Function to view user information from the file
@@ -1243,11 +1358,25 @@ int main()
                     validChoice = true;
                     break;
                 }
-
                 case 9: {
+                    std::cout << "Parent Teacher Message Bored" << std::endl;
+                    viewMessages();
+                    validChoice = true;
+                    break;
+                }
+                case 10: {
+                    std::cout << "Student Teacher Message Bored" << std::endl;
+                    viewMessages1();
+                    validChoice = true;
+                    break;
+                }
+                case 11: {
                     currentUser->signOut();
                     break;
-
+                }
+                case 12: {
+                    std::cout << " Exiting Program ..." << std::endl;
+                    exit(0);
                 }
                 default:
                     throw std::invalid_argument("Invalid choice. Please try again.");
