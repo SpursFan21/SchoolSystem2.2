@@ -34,6 +34,12 @@ std::vector<std::string> splitString(const std::string& str, char delimiter) {
     return tokens;
 }
 
+
+
+
+
+
+
 void relogMenu();
 
 class User {
@@ -64,7 +70,7 @@ public:
     void signOut() const {
         std::cout << "Signing out..." << std::endl;
         // Perform any necessary cleanup or tasks before signing out
-
+        system("cls");
         relogMenu();
     }
 
@@ -119,19 +125,45 @@ public:
         }
     }
 
-    void displayMenu() const override {
-        std::cout << "Admin Menu" << std::endl;
-        std::cout << "User Type: " << getType() << std::endl;
-        std::cout << "User ID: " << getId() << std::endl;
-        std::cout << "1. Register User" << std::endl;
-        std::cout << "2. Update User" << std::endl;
-        std::cout << "3. Delete User" << std::endl;
-        std::cout << "4. View User Information" << std::endl;
-        std::cout << "5. Add Student" << std::endl;
-        std::cout << "6. Add Teacher" << std::endl;
-        std::cout << "7. Add Class" << std::endl;
-        std::cout << "8. Add Grade for Student" << std::endl;
-        std::cout << "9. Sign Out" << std::endl;
+    void  displayMenu() const override {
+        system("cls");
+
+        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tADMIN MENU" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser Type: " << getType() << std::endl;
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser ID: " << getId() << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Register User" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Update User" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t3.) Delete User" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t4.) View User Information" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t5.) Add Student" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t6.) Add Teacher" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t7.) Add Class" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t8.) Add Grade For Student" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t9.) Sign Out" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
     }
 };
 
@@ -155,24 +187,43 @@ public:
         int choice;
 
         while (true) {
-            std::cout << "Teacher User Menu" << std::endl;
-            std::cout << "User Type: " << getType() << std::endl;
-            std::cout << "User ID: " << getId() << std::endl;
-            std::cout << "1. Add Grade for Student" << std::endl;
-            std::cout << "2. View Grades" << std::endl;
-            std::cout << "3. Sign Out" << std::endl;
-            std::cout << "Enter your choice: ";
+            system("cls");
+            std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t     TEACHER PORTAL" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+
+            std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser Type: " << getType() << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser ID: " << getId() << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1). Add Grade for Student" << std::endl;
+            std::cout << "\n" << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2). View Grades" << std::endl;
+            std::cout << "\n" << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t3). Sign Out" << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
             std::cin >> choice;
 
             switch (choice) {
             case 1: {
+                system("cls");
                 std::string studentName;
                 std::string grades;
 
-                std::cout << "Enter student name: ";
-                std::cin >> studentName;
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
 
-                std::cout << "Enter grades (format: subject1:grade1 subject2:grade2 ...): ";
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter student name: ";
+                std::cin >> studentName;
+                std::cout << "\n" << std::endl;
+
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t   Enter grades below \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t(format: subject1:grade1)\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::getline(std::cin, grades);
 
@@ -205,10 +256,67 @@ public:
                         if (found) {
                             // Replace the original grades file with the updated temporary file
                             if (std::remove("grades.txt") == 0 && std::rename("temp_grades.txt", "grades.txt") == 0) {
-                                std::cout << "Grades updated successfully." << std::endl;
+
+                                int logFail = 0;
+
+                                system("cls");
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t     Grades updated successfully." << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                                std::cout << "\n" << std::endl;
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                                std::cin >> logFail;
+
+                                switch (logFail) {
+                                case 1:
+                                    system("cls");
+                                    break;
+
+                                case 2:
+                                    system("cls");
+                                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                                    exit(0);
+                                }
                             }
                             else {
-                                std::cout << "Failed to update grades." << std::endl;
+                                int logFail = 0;
+
+                                system("cls");
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Failed to update grades." << std::endl;
+
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                                std::cout << "\n" << std::endl;
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                                std::cin >> logFail;
+
+                                switch (logFail) {
+                                case 1:
+                                    system("cls");
+                                    break;
+
+                                case 2:
+                                    system("cls");
+                                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                                    exit(0);
+                                }
                             }
                         }
                         else {
@@ -217,10 +325,67 @@ public:
                             if (newGradeFile.is_open()) {
                                 newGradeFile << studentName << " " << grades << std::endl;
                                 newGradeFile.close();
-                                std::cout << "Grades added successfully." << std::endl;
+
+                                int logFail = 0;
+
+                                system("cls");
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t     Grades added successfully." << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                                std::cout << "\n" << std::endl;
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                                std::cin >> logFail;
+
+                                switch (logFail) {
+                                case 1:
+                                    system("cls");
+                                    break;
+
+                                case 2:
+                                    system("cls");
+                                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                                    exit(0);
+                                }
                             }
                             else {
-                                std::cout << "Failed to add grades." << std::endl;
+                                int logFail = 0;
+
+                                system("cls");
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Failed to add grades." << std::endl;
+
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                                std::cout << "\n" << std::endl;
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                                std::cin >> logFail;
+
+                                switch (logFail) {
+                                case 1:
+                                    system("cls");
+                                    break;
+
+                                case 2:
+                                    system("cls");
+                                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                                    exit(0);
+                                }
                             }
                         }
                     }
@@ -240,7 +405,39 @@ public:
                     if (file.is_open()) {
                         std::string line;
                         while (std::getline(file, line)) {
-                            std::cout << line << std::endl;
+
+                            int logFail = 0;
+
+                            system("cls");
+
+                            std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       VIEW GRADES" << std::endl;
+                            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                            while (std::getline(file, line)) {
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t" << line << std::endl;
+                            }
+                            std::cout << "\n" << std::endl;
+
+                            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                            std::cout << "\n" << std::endl;
+                            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                            std::cout << "\n" << std::endl;
+
+                            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                            std::cin >> logFail;
+
+                            switch (logFail) {
+                            case 1:
+                                system("cls");
+                                break;
+
+                            case 2:
+                                system("cls");
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                                exit(0);
+                            }
+
                         }
                         file.close();
                     }
@@ -256,10 +453,44 @@ public:
 
             case 3:
                 signOut(); // Call the signOut function to sign out and return to the login menu
+
                 return;
 
             default:
-                std::cout << "Invalid choice. Please try again." << std::endl;
+                int logFail = 0;
+
+                system("cls");
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       INVALID" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid Input" << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                std::cout << "\n" << std::endl;
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                std::cin >> logFail;
+
+                switch (logFail) {
+                case 1:
+                    system("cls");
+                    break;
+
+                case 2:
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                    exit(0);
+
+
+
+
+                }
                 break;
             }
         }
@@ -281,14 +512,25 @@ public:
 
     void displayMenu() const override {
         try {
-            std::cout << "Parent Menu" << std::endl;
-            std::cout << "User Type: Parent" << std::endl;
-            std::cout << "User ID: " << getId() << std::endl;
-            std::cout << "1. View Student Report Card" << std::endl;
-            std::cout << "2. Sign Out" << std::endl;
+
+            system("cls");
+            std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t     PARENT PORTAL" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser Type: Parent" << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser ID: " << getId() << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) View Student Reports" << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Sign Out" << std::endl;
+            std::cout << "\n" << std::endl;
 
             int choice;
-            std::cout << "Enter your choice: ";
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
             std::cin >> choice;
 
             switch (choice) {
@@ -299,9 +541,66 @@ public:
                 User::signOut(); // Call the signOut function of the User base class
                 return;
             default:
-                std::cout << "Invalid choice." << std::endl;
+                int logFail = 0;
+
+                system("cls");
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       INVALID" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid Input" << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                std::cout << "\n" << std::endl;
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                std::cin >> logFail;
+
+                switch (logFail) {
+                case 1:
+                    system("cls");
+                    break;
+
+                case 2:
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                    exit(0);
+
+
+
+                default:
+                    int logFail = 0;
+
+                    system("cls");
+
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       INVALID" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid Input" << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                    std::cout << "\n" << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                    std::cin >> logFail;
+                }
                 break;
             }
+
+
+
+
+
 
             // Prompt the parent user to continue
             char continueChoice;
@@ -317,10 +616,11 @@ public:
         }
     }
 
-    void viewStudentReportCard() const {
+    void  viewStudentReportCard() const {
         try {
             std::ifstream file("grades.txt");
             if (!file.is_open()) {
+                system("cls");
                 throw std::runtime_error("Unable to open grades file.");
             }
 
@@ -331,8 +631,15 @@ public:
                 std::stringstream ss(line);
                 std::string studentInfo, classGrade;
 
+                system("cls");
+
                 std::getline(ss, studentInfo, ':');  // Extract the student information
-                std::cout << "Student: " << studentInfo << std::endl;
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      GRADES MENU" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                std::cout << "Student " << studentInfo << std::endl;
 
                 while (std::getline(ss, classGrade, ',')) {
                     std::stringstream gradeSS(classGrade);
@@ -341,7 +648,7 @@ public:
                     std::getline(gradeSS, className, ':');  // Extract the class name
                     std::getline(gradeSS, grade, ':');      // Extract the grade
 
-                    std::cout << className << ": " << grade << std::endl;
+                    std::cout << className << grade << "\n" << std::endl;
                 }
             }
             else {
@@ -366,7 +673,9 @@ public:
     }
 
     StudentUser(const std::string& id, const std::string& username, const std::string& password)
-        : User(id, username, password) {type = "Student"; }
+        : User(id, username, password) {
+        type = "Student";
+    }
 
     StudentUser(const std::string& name) : User("", name, "") { type = "Student"; }
 
@@ -387,7 +696,37 @@ public:
 
             if (std::getline(ss, studentUsername, ':') && std::getline(ss, studentName, ':') && std::getline(ss, subjectGradePair)) {
                 if (studentUsername == getUsername()) {
-                    std::cout << "Grades for " << studentName << ": " << subjectGradePair << std::endl;
+
+                    int logFail = 0;
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      GRADES MENU" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                    std::cout << "\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tGrades for " << studentName << ":\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t" << subjectGradePair << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                    std::cout << "\n" << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                    std::cin >> logFail;
+
+                    switch (logFail) {
+                    case 1:
+                        system("cls");
+                        break;
+
+                    case 2:
+                        system("cls");
+                        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                        exit(0);
+
+                    }
+
+
+                    system("cls");
                     return;
                 }
             }
@@ -401,13 +740,27 @@ public:
             int choice;
 
             while (true) {
-                std::cout << "Student User Menu" << std::endl;
-                std::cout << "User Type: " << getType() << std::endl;
-                std::cout << "User ID: " << getId() << std::endl;
-                std::cout << "1. View Grades" << std::endl;
-                std::cout << "2. Sign Out" << std::endl;
-                std::cout << "Enter your choice: ";
+
+                system("cls");
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t     STUDENT PORTAL" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser Type: " << getType() << std::endl;
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser ID: " << getId() << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) View Grades" << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Sign Out" << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
                 std::cin >> choice;
+
+                system("cls");
 
                 if (std::cin.fail()) {
                     std::cin.clear();               // Clear the error state
@@ -439,8 +792,8 @@ public:
     const std::vector<std::string>& getClasses() const { return classes; }
 
     std::vector<int> getGrades() const {
-    return grades;
-}
+        return grades;
+    }
 
 protected:
     std::vector<int> grades; // Vector to store grades
@@ -528,201 +881,363 @@ public:
 
 
 
-    // Function to view user information from the file
-    void viewUserInformation(const std::string& filename, const std::string& username) {
-        try {
-            std::ifstream inputFile(filename);
-            if (!inputFile) {
-                throw std::runtime_error("Failed to open the file");
-            }
-
-            std::string line;
-            bool userFound = false;
-
-            while (std::getline(inputFile, line)) {
-                std::vector<std::string> userData = splitString(line, ',');
-                if (userData.size() >= 3 && userData[1] == username) {
-                    // Display the user information
-                    std::cout << "Username: " << userData[1] << std::endl;
-                    std::cout << "Password: " << userData[2] << std::endl;
-                    userFound = true;
-                    break;
-                }
-            }
-
-            inputFile.close();
-
-            if (!userFound) {
-                std::cout << "User not found." << std::endl;
-            }
-        }
-        catch (const std::exception& e) {
-            std::cerr << "Error: " << e.what() << std::endl;
-        }
-    }
-
-
-    // Function to update user information in the file
-    void updateUserInformation(const std::string& username, const std::string& newUsername, const std::string& newPassword) {
-        std::vector<std::string> userRecords;
-
-        // Read the existing user information from the file
-        std::ifstream inputFile("users.txt");
-        if (inputFile.is_open()) {
-            std::string line;
-            while (std::getline(inputFile, line)) {
-                userRecords.push_back(line);
-            }
-            inputFile.close();
-        }
-        else {
-            std::cerr << "Error opening the file" << std::endl;
-            return;
-        }
-
-        // Search for the username in the user records
-        bool userFound = false;
-        for (auto& record : userRecords) {
-            std::vector<std::string> userData = splitString(record, ',');
-            if (userData[1] == username) {
-                // Update the user information
-                userData[1] = newUsername;
-                userData[2] = newPassword;
-
-                // Modify the record in the user records
-                record = userData[0] + "," + userData[1] + "," + userData[2];
-
-                userFound = true;
-                break;
-            }
-        }
-
-        // Write the modified user information back to the file
-        std::ofstream outputFile("users.txt");
-        if (outputFile.is_open()) {
-            for (const auto& record : userRecords) {
-                outputFile << record << std::endl;
-            }
-            outputFile.close();
-            std::cout << "User information updated successfully." << std::endl;
-        }
-        else {
-            std::cerr << "Error opening the file" << std::endl;
-        }
-
-        if (!userFound) {
-            std::cout << "User not found." << std::endl;
-        }
-    }
-
-    // Function to delete a user from the users.txt file
-    void deleteUserFromFile(const std::string& username) {
-        std::ifstream inFile("users.txt");
-        if (!inFile) {
-            std::cout << "Error opening file." << std::endl;
-            return;
-        }
-
-        std::ofstream outFile("users.txt");
-        if (!outFile) {
-            std::cout << "Error creating temporary file." << std::endl;
-            inFile.close();
-            return;
+// Function to view user information from the file
+void viewUserInformation(const std::string& filename, const std::string& username) {
+    try {
+        std::ifstream inputFile(filename);
+        if (!inputFile) {
+            throw std::runtime_error("Failed to open the file");
         }
 
         std::string line;
         bool userFound = false;
 
-        while (std::getline(inFile, line)) {
-            if (line.substr(0, username.length()) != username) {
-                // Write the line to the temporary file if the username doesn't match
-                outFile << line << std::endl;
-            }
-            else {
-                // Set the flag to indicate that the user was found
+        while (std::getline(inputFile, line)) {
+            std::vector<std::string> userData = splitString(line, ',');
+            if (userData.size() >= 3 && userData[1] == username) {
+                // Display the user information
+                std::cout << "Username: " << userData[1] << std::endl;
+                std::cout << "Password: " << userData[2] << std::endl;
                 userFound = true;
+                break;
             }
         }
 
-        inFile.close();
-        outFile.close();
+        inputFile.close();
 
-        // Delete the original file and rename the temporary file to users.txt
-        if (userFound) {
-            if (std::remove("users.txt") != 0) {
-                std::cout << "Error deleting file." << std::endl;
-                return;
-            }
-
-            if (std::rename("temp.txt", "users.txt") != 0) {
-                std::cout << "Error renaming file." << std::endl;
-                return;
-            }
-
-            std::cout << "User deleted successfully." << std::endl;
-        }
-        else {
+        if (!userFound) {
             std::cout << "User not found." << std::endl;
         }
     }
+    catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+}
 
-    bool isValidCredentials(const std::string& username, const std::string& password) {
-        std::ifstream userFile("users.txt");
-        if (userFile.is_open()) {
-            std::string line;
-            while (std::getline(userFile, line)) {
-                std::vector<std::string> userData = splitString(line, ',');
-                if (userData.size() >= 3 && userData[1] == username && userData[2] == password) {
-                    userFile.close();
-                    return true;
-                }
-                else {
-                    std::cout << "Debug - Username: " << userData[1] << ", Password: " << userData[2] << std::endl;
-                }
-            }
-            userFile.close();
+
+// Function to update user information in the file
+void updateUserInformation(const std::string& username, const std::string& newUsername, const std::string& newPassword) {
+    std::vector<std::string> userRecords;
+
+    // Read the existing user information from the file
+    std::ifstream inputFile("users.txt");
+    if (inputFile.is_open()) {
+        std::string line;
+        while (std::getline(inputFile, line)) {
+            userRecords.push_back(line);
         }
-        return false;
+        inputFile.close();
+    }
+    else {
+        std::cerr << "Error opening the file" << std::endl;
+        return;
     }
 
-    void relogMenu() {
-        School school; // Creating an instance of the School class
+    // Search for the username in the user records
+    bool userFound = false;
+    for (auto& record : userRecords) {
+        std::vector<std::string> userData = splitString(record, ',');
+        if (userData[1] == username) {
+            // Update the user information
+            userData[1] = newUsername;
+            userData[2] = newPassword;
 
-        User* currentUser = nullptr;
-        bool loggedIn = false;
-        bool exitProgram = false;
+            // Modify the record in the user records
+            record = userData[0] + "," + userData[1] + "," + userData[2];
 
-        int choice;
+            userFound = true;
+            break;
+        }
+    }
 
-        while (!loggedIn && !exitProgram) {
-            std::cout << "===== Start Menu =====" << std::endl;
-            std::cout << "1. Log in" << std::endl;
-            std::cout << "2. New Admin" << std::endl;
-            std::cout << "3. Exit" << std::endl;
-            std::cout << "======================" << std::endl;
-            std::cout << "Enter your choice: ";
-            std::cin >> choice;
+    // Write the modified user information back to the file
+    std::ofstream outputFile("users.txt");
+    if (outputFile.is_open()) {
+        for (const auto& record : userRecords) {
+            outputFile << record << std::endl;
+        }
+        outputFile.close();
+        std::cout << "User information updated successfully." << std::endl;
+    }
+    else {
+        std::cerr << "Error opening the file" << std::endl;
+    }
+
+    if (!userFound) {
+        std::cout << "User not found." << std::endl;
+    }
+}
+
+// Function to delete a user from the users.txt file
+void deleteUserFromFile(const std::string& username) {
+    std::ifstream inFile("users.txt");
+    if (!inFile) {
+        std::cout << "Error opening file." << std::endl;
+        return;
+    }
+
+    std::ofstream outFile("users.txt");
+    if (!outFile) {
+        std::cout << "Error creating temporary file." << std::endl;
+        inFile.close();
+        return;
+    }
+
+    std::string line;
+    bool userFound = false;
+
+    while (std::getline(inFile, line)) {
+        if (line.substr(0, username.length()) != username) {
+            // Write the line to the temporary file if the username doesn't match
+            outFile << line << std::endl;
+        }
+        else {
+            // Set the flag to indicate that the user was found
+            userFound = true;
+        }
+    }
+
+    inFile.close();
+    outFile.close();
+
+    // Delete the original file and rename the temporary file to users.txt
+    if (userFound) {
+        if (std::remove("users.txt") != 0) {
+            std::cout << "Error deleting file." << std::endl;
+            return;
+        }
+
+        if (std::rename("temp.txt", "users.txt") != 0) {
+            std::cout << "Error renaming file." << std::endl;
+            return;
+        }
+
+        std::cout << "User deleted successfully." << std::endl;
+    }
+    else {
+        std::cout << "User not found." << std::endl;
+    }
+}
+
+bool isValidCredentials(const std::string& username, const std::string& password) {
+    std::ifstream userFile("users.txt");
+    if (userFile.is_open()) {
+        std::string line;
+        while (std::getline(userFile, line)) {
+            std::vector<std::string> userData = splitString(line, ',');
+            if (userData.size() >= 3 && userData[1] == username && userData[2] == password) {
+                userFile.close();
+                return true;
+            }
+            else {
+                std::cout << "Debug - Username: " << userData[1] << ", Password: " << userData[2] << std::endl;
+            }
+        }
+        userFile.close();
+    }
+    return false;
+}
+
+void relogMenu() {
+    School school; // Creating an instance of the School class
+
+    User* currentUser = nullptr;
+    bool loggedIn = false;
+    bool exitProgram = false;
+
+    int choice;
+
+    while (!loggedIn && !exitProgram) {
+        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMAIN MENU" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+        std::cout << "\n\n" << std::endl;
+
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Log in" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) New Admin" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t3.) Exit" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+        std::cin >> choice;
+
+        switch (choice) {
+        case 1: {
+            std::string username, password;
+            std::cout << "Enter username: ";
+            try {
+                std::cin >> username;
+            }
+            catch (const std::exception& e) {
+                std::cerr << "Error: " << e.what() << std::endl;
+                break;
+            }
+
+            std::cout << "Enter password: ";
+            try {
+                std::cin >> password;
+            }
+            catch (const std::exception& e) {
+                std::cerr << "Error: " << e.what() << std::endl;
+                break;
+            }
+
+            User* user = school.findUser(username);
+            if (user && user->getPassword().compare(password) == 0) {
+                currentUser = user;
+                loggedIn = true;
+            }
+            else {
+                std::cout << "Invalid username or password" << std::endl;
+            }
+            break;
+        }
+        case 2: {
+            // Create new admin logic
+            std::string newAdminUsername, newAdminPassword;
+            std::cout << "Enter new admin username: ";
+            std::cin >> newAdminUsername;
+            std::cout << "Enter new admin password: ";
+            std::cin >> newAdminPassword;
+
+            Admin* newAdmin = new Admin(newAdminUsername, newAdminPassword);
+            school.registerUser(newAdmin);
+
+            std::cout << "New admin created successfully!" << std::endl;
+            break;
+        }
+
+        case 3: {
+            std::cout << "Exiting..." << std::endl;
+            exit(0);
+        }
+        default:
+            std::cout << "Invalid choice" << std::endl;
+            break;
+        }
+    }
+}
+
+
+void exitProgram()
+{
+    std::cout << "Exiting..." << std::endl;
+    exit(0);
+}
+
+int main()
+{
+    School school;
+    std::string line;
+    // Creating Local user objects
+    Admin admin("admin", "admin123", "adminID");  // Pass the username, password, and ID
+    Teacher teacher("teacher", "teacher123");
+    Parent parent("parent", "parent123");
+    StudentUser student("student", "student123", "studentID");
+
+    std::vector<User*> users;
+    users.push_back(&admin);
+    users.push_back(&teacher);
+    users.push_back(&parent);
+    users.push_back(&student);
+
+    school.registerUser(&admin);
+    school.registerUser(&teacher);
+    school.registerUser(&parent);
+    school.registerUser(&student);
+
+    std::ifstream userFile("users.txt");
+    if (userFile.is_open()) {
+        std::string line;
+        while (std::getline(userFile, line)) {
+            std::vector<std::string> tokens = splitString(line, ',');
+
+            // Check if the line has at least 4 tokens (userType, username, password, userID)
+            if (tokens.size() >= 4) {
+                std::string userType = tokens[0];
+                std::string username = tokens[1];
+                std::string password = tokens[2];
+                std::string userID = tokens[3];
+
+                if (userType == "admin") {
+                    Admin* admin = new Admin(userID, username, password);
+                    school.registerUser(admin);
+                }
+                else if (userType == "teacher") {
+                    Teacher* teacher = new Teacher(userID, username, password);
+                    school.registerUser(teacher);
+                }
+                else if (userType == "parent") {
+                    Parent* parent = new Parent(userID, username, password);
+                    school.registerUser(parent);
+                }
+                else if (userType == "student") {
+                    StudentUser* student = new StudentUser(userID, username, password);
+                    school.registerUser(student);
+                }
+            }
+        }
+        userFile.close();
+    }
+    else {
+        std::cout << "Failed to open users.txt" << std::endl;
+        return 1;
+    }
+
+    User* currentUser = nullptr;
+    bool loggedIn = false;
+    bool exitProgram = false;
+
+    int choice;
+
+    while (!loggedIn && !exitProgram) {
+
+        system("cls");
+        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMAIN MENU" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+        std::cout << "\n\n" << std::endl;
+
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Log in" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) New Admin" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t3.) Exit" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+
+        std::string input;
+        std::cin >> input;
+
+        try {
+            choice = std::stoi(input);
 
             switch (choice) {
             case 1: {
+                system("cls");
                 std::string username, password;
-                std::cout << "Enter username: ";
-                try {
-                    std::cin >> username;
-                }
-                catch (const std::exception& e) {
-                    std::cerr << "Error: " << e.what() << std::endl;
-                    break;
-                }
 
-                std::cout << "Enter password: ";
-                try {
-                    std::cin >> password;
-                }
-                catch (const std::exception& e) {
-                    std::cerr << "Error: " << e.what() << std::endl;
-                    break;
-                }
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      LOGIN MENU" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter username: ";
+                std::cin >> username;
+                std::cout << "\n" << std::endl;
+
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter password: ";
+                std::cin >> password;
 
                 User* user = school.findUser(username);
                 if (user && user->getPassword().compare(password) == 0) {
@@ -730,116 +1245,94 @@ public:
                     loggedIn = true;
                 }
                 else {
-                    std::cout << "Invalid username or password" << std::endl;
+                    system("cls");
+                    int logFail = 0;
+
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      LOGIN MENU" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t      Invalid username or password" << std::endl;
+                    std::cout << "\n" << std::endl;
+
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                    std::cout << "\n" << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                    std::cin >> logFail;
+
+                    switch (logFail) {
+                    case 1:
+                        system("cls");
+                        break;
+
+                    case 2:
+                        system("cls");
+                        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                        exit(0);
+                    }
+
                 }
                 break;
             }
             case 2: {
                 // Create new admin logic
                 std::string newAdminUsername, newAdminPassword;
-                std::cout << "Enter new admin username: ";
+                system("cls");
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      CREATE ADMIN" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tAdmin Username: ";
                 std::cin >> newAdminUsername;
-                std::cout << "Enter new admin password: ";
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tAdmin Password: ";
                 std::cin >> newAdminPassword;
+                std::cout << "\n\n" << std::endl;
 
                 Admin* newAdmin = new Admin(newAdminUsername, newAdminPassword);
                 school.registerUser(newAdmin);
 
-                std::cout << "New admin created successfully!" << std::endl;
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t    New admin created successfully!" << std::endl;
+                system("cls");
                 break;
             }
-
             case 3: {
-                std::cout << "Exiting..." << std::endl;
+                system("cls");
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
                 exit(0);
             }
             default:
-                std::cout << "Invalid choice" << std::endl;
-                break;
+                
+                throw std::invalid_argument("Invalid choice");
+                system("cls");
             }
+        }
+        catch (const std::exception& e) {
+            std::cout << "Error: " << e.what() << ". Please enter a valid choice." << std::endl;
+            // Clear the input stream
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
     }
 
 
-    void exitProgram()
-    {
-        std::cout << "Exiting..." << std::endl;
-        exit(0);
-    }
+    while (loggedIn) {
+        currentUser->displayMenu();
+        bool validChoice = false;
+        std::string continueChoice; // Declare continueChoice variable
 
-    int main()
-    {
-        School school;
-        std::string line;
-        // Creating Local user objects
-        Admin admin("admin", "admin123", "adminID");  // Pass the username, password, and ID
-        Teacher teacher("teacher", "teacher123");
-        Parent parent("parent", "parent123");
-        StudentUser student("student", "student123", "studentID");
+        while (!validChoice) {
+            // ...
 
-        std::vector<User*> users;
-        users.push_back(&admin);
-        users.push_back(&teacher);
-        users.push_back(&parent);
-        users.push_back(&student);
-
-        school.registerUser(&admin);
-        school.registerUser(&teacher);
-        school.registerUser(&parent);
-        school.registerUser(&student);
-
-        std::ifstream userFile("users.txt");
-        if (userFile.is_open()) {
-            std::string line;
-            while (std::getline(userFile, line)) {
-                std::vector<std::string> tokens = splitString(line, ',');
-
-                // Check if the line has at least 4 tokens (userType, username, password, userID)
-                if (tokens.size() >= 4) {
-                    std::string userType = tokens[0];
-                    std::string username = tokens[1];
-                    std::string password = tokens[2];
-                    std::string userID = tokens[3];
-
-                    if (userType == "admin") {
-                        Admin* admin = new Admin(userID, username, password);
-                        school.registerUser(admin);
-                    }
-                    else if (userType == "teacher") {
-                        Teacher* teacher = new Teacher(userID, username, password);
-                        school.registerUser(teacher);
-                    }
-                    else if (userType == "parent") {
-                        Parent* parent = new Parent(userID, username, password);
-                        school.registerUser(parent);
-                    }
-                    else if (userType == "student") {
-                        StudentUser* student = new StudentUser(userID, username, password);
-                        school.registerUser(student);
-                    }
-                }
-            }
-            userFile.close();
-        }
-        else {
-            std::cout << "Failed to open users.txt" << std::endl;
-            return 1;
-        }
-
-        User* currentUser = nullptr;
-        bool loggedIn = false;
-        bool exitProgram = false;
-
-        int choice;
-
-        while (!loggedIn && !exitProgram) {
-            std::cout << "===== Start Menu =====" << std::endl;
-            std::cout << "1. Log in" << std::endl;
-            std::cout << "2. New Admin" << std::endl;
-            std::cout << "3. Exit" << std::endl;
-            std::cout << "======================" << std::endl;
             std::cout << "Enter your choice: ";
-
             std::string input;
             std::cin >> input;
 
@@ -848,311 +1341,276 @@ public:
 
                 switch (choice) {
                 case 1: {
-                    std::string username, password;
-                    std::cout << "Enter username: ";
+                    // Register User
+                    std::string userType, username, password;
+                    system("cls");
+
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t   REGISTER NEW USER" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the user type below\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t(admin/teacher/parent/student):\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+                    std::cin >> userType;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the username: ";
                     std::cin >> username;
+                    std::cout << "\n" << std::endl;
 
-                    std::cout << "Enter password: ";
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the password: ";
                     std::cin >> password;
+                    std::cout << "\n" << std::endl;
 
-                    User* user = school.findUser(username);
-                    if (user && user->getPassword().compare(password) == 0) {
-                        currentUser = user;
-                        loggedIn = true;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser registered successfully." << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    // Save user information to file
+                    std::ofstream outputFile("users.txt", std::ios::app);
+                    if (outputFile.is_open()) {
+                        outputFile << userType << "," << username << "," << password << std::endl;
+                        outputFile.close();
                     }
                     else {
-                        std::cout << "Invalid username or password" << std::endl;
+                        throw std::runtime_error("Error opening the file");
                     }
+
+
+
+                    int logFail = 0;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                    std::cout << "\n" << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                    std::cin >> logFail;
+
+                    switch (logFail) {
+                    case 1:
+                        system("cls");
+                        break;
+
+                    case 2:
+                        system("cls");
+                        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                        exit(0);
+                    }
+
                     break;
                 }
+
                 case 2: {
-                    // Create new admin logic
-                    std::string newAdminUsername, newAdminPassword;
-                    std::cout << "Enter new admin username: ";
-                    std::cin >> newAdminUsername;
-                    std::cout << "Enter new admin password: ";
-                    std::cin >> newAdminPassword;
+                    // Update User
+                    std::string username;
+                    std::cout << "Enter the username of the user to update: ";
+                    std::cin >> username;
 
-                    Admin* newAdmin = new Admin(newAdminUsername, newAdminPassword);
-                    school.registerUser(newAdmin);
+                    std::string newUsername;
+                    std::cout << "Enter the new username: ";
+                    std::cin >> newUsername;
 
-                    std::cout << "New admin created successfully!" << std::endl;
+                    std::string newPassword;
+                    std::cout << "Enter the new password: ";
+                    std::cin >> newPassword;
+
+                    updateUserInformation(username, newUsername, newPassword);
+                    std::cout << "User updated successfully." << std::endl;
+
+                    validChoice = true;
                     break;
                 }
+
                 case 3: {
-                    std::cout << "Exiting..." << std::endl;
-                    exitProgram = true;
+                    // Delete User
+                    std::string username;
+                    std::cout << "Enter the username of the user to delete: ";
+                    std::cin >> username;
+
+                    school.deleteUser(username);
+
+                    std::cout << "User deleted successfully." << std::endl;
+                    validChoice = true;
                     break;
+                }
+
+                case 4: {
+                    // View User Information
+                    std::string username;
+                    std::cout << "Enter the username of the user to view information: ";
+                    std::cin >> username;
+
+                    viewUserInformation("users.txt", username);
+                    validChoice = true;
+                    break;
+                }
+
+                case 5: {
+                    // Add Student
+                    std::string studentName;
+                    std::cout << "Enter the name of the student to add: ";
+                    std::cin >> studentName;
+
+                    school.addStudent(studentName);
+                    std::cout << "Student added successfully." << std::endl;
+                    validChoice = true;
+                    break;
+                }
+                case 6: {
+                    // Add Teacher
+                    std::string teacherName;
+                    std::cout << "Enter the name of the teacher to add: ";
+                    std::cin >> teacherName;
+
+                    // Create a new Teacher object
+                    Teacher newTeacher(teacherName);
+
+                    // Save teacher information to file
+                    std::ofstream staffFile;
+                    staffFile.exceptions(std::ofstream::failbit | std::ofstream::badbit);
+                    try {
+                        staffFile.open("staff.txt", std::ios::app);
+                        staffFile << "Teacher Name: " << newTeacher.getUsername() << "\n";
+                        staffFile.close();
+                        std::cout << "Teacher added successfully." << std::endl;
+                    }
+                    catch (const std::ofstream::failure& e) {
+                        std::cerr << "Error writing to staff.txt: " << e.what() << std::endl;
+                    }
+
+                    validChoice = true;
+                    break;
+                }
+
+
+                case 7: {
+                    // Add Class
+                    std::string className;
+                    std::cout << "Enter the name of the class to add: ";
+                    std::cin >> className;
+
+                    // Assuming you have an Admin object for the current admin
+                    if (currentUser->getUsername() == "admin") {
+                        Admin* admin = dynamic_cast<Admin*>(currentUser);
+                        admin->addClass(className);
+
+                        // Update the classes.txt file with the new class
+                        std::ofstream classesFile("classes.txt", std::ios::app);
+                        if (classesFile.is_open()) {
+                            classesFile << className << "\n";
+                            classesFile.close();
+                            std::cout << "Class added successfully." << std::endl;
+                        }
+                        else {
+                            throw std::runtime_error("Failed to open classes.txt");
+                        }
+                    }
+                    else {
+                        throw std::invalid_argument("Invalid user type for adding a class.");
+                    }
+
+                    validChoice = true;
+                    break;
+                }
+
+                case 8: {
+                    // Add Grade for Student
+                    std::string studentName;
+                    std::cout << "Enter the name of the student: ";
+                    std::cin >> studentName;
+
+                    // Find the student in the school
+                    StudentUser* student = school.findStudent(studentName);
+                    if (student) {
+                        // Display the student's classes
+                        const std::vector<std::string>& classes = student->getClasses();
+                        std::cout << "Classes: ";
+                        for (const std::string& className : classes) {
+                            std::cout << className << ", ";
+                        }
+                        std::cout << std::endl;
+
+                        // Select a class to add the grade
+                        std::string className;
+                        std::cout << "Enter the class name to add the grade: ";
+                        std::cin >> className;
+
+                        // Find the index of the class in the student's classes vector
+                        size_t index = -1;
+                        for (size_t i = 0; i < classes.size(); i++) {
+                            if (classes[i] == className) {
+                                index = i;
+                                break;
+                            }
+                        }
+
+                        if (index != -1) {
+                            // Prompt for the grade
+                            int grade;
+                            std::cout << "Enter the grade for " << className << ": ";
+                            std::cin >> grade;
+
+                            // Update the grade for the selected class
+                            student->updateGrade(index, grade);
+
+                            // Save the updated student information to the file
+                            std::ofstream studentFile("students.txt");
+                            if (studentFile.is_open()) {
+                                for (const StudentUser& s : school.getStudents()) {
+                                    studentFile << s.getName() << ",";
+                                    const std::vector<std::string>& studentClasses = s.getClasses();
+                                    const std::vector<int>& studentGrades = s.getGrades();
+                                    for (size_t i = 0; i < studentClasses.size(); i++) {
+                                        studentFile << studentClasses[i] << ":" << studentGrades[i];
+                                        if (i < studentClasses.size() - 1) {
+                                            studentFile << ",";
+                                        }
+                                    }
+                                    studentFile << "\n";
+                                }
+                                studentFile.close();
+                                std::cout << "Grade added successfully." << std::endl;
+                            }
+                            else {
+                                throw std::runtime_error("Failed to open students.txt");
+                            }
+                        }
+                        else {
+                            throw std::invalid_argument("Class not found for the student.");
+                        }
+                    }
+                    else {
+                        throw std::invalid_argument("Student not found.");
+                    }
+
+                    validChoice = true;
+                    break;
+                }
+
+                case 9: {
+                    currentUser->signOut();
+                    break;
+
                 }
                 default:
-                    throw std::invalid_argument("Invalid choice");
+                    throw std::invalid_argument("Invalid choice. Please try again.");
                 }
             }
             catch (const std::exception& e) {
-                std::cout << "Error: " << e.what() << ". Please enter a valid choice." << std::endl;
-                // Clear the input stream
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cerr << "Error: " << e.what() << std::endl;
             }
+
         }
 
+        std::cout << "Do you want to continue? (yes/no): ";
+        std::cin >> continueChoice;
 
-        while (loggedIn) {
-            currentUser->displayMenu();
-            bool validChoice = false;
-            std::string continueChoice; // Declare continueChoice variable
-
-            while (!validChoice) {
-                // ...
-
-                std::cout << "Enter your choice: ";
-                std::string input;
-                std::cin >> input;
-
-                try {
-                    choice = std::stoi(input);
-
-                    switch (choice) {
-                    case 1: {
-                        // Register User
-                        std::string userType, username, password;
-                        std::cout << "Enter the user type (admin/teacher/parent/student): ";
-                        std::cin >> userType;
-                        std::cout << "Enter the username: ";
-                        std::cin >> username;
-                        std::cout << "Enter the password: ";
-                        std::cin >> password;
-
-                        std::cout << "User registered successfully." << std::endl;
-
-                        // Save user information to file
-                        std::ofstream outputFile("users.txt", std::ios::app);
-                        if (outputFile.is_open()) {
-                            outputFile << userType << "," << username << "," << password << std::endl;
-                            outputFile.close();
-                            std::cout << "User information saved to users.txt" << std::endl;
-                        }
-                        else {
-                            throw std::runtime_error("Error opening the file");
-                        }
-
-                        if (continueChoice == "no") {
-                            exitProgram = true;
-                        }
-                        else {
-                            validChoice = true;
-                        }
-                        break;
-                    }
-
-                    case 2: {
-                        // Update User
-                        std::string username;
-                        std::cout << "Enter the username of the user to update: ";
-                        std::cin >> username;
-
-                        std::string newUsername;
-                        std::cout << "Enter the new username: ";
-                        std::cin >> newUsername;
-
-                        std::string newPassword;
-                        std::cout << "Enter the new password: ";
-                        std::cin >> newPassword;
-
-                        updateUserInformation(username, newUsername, newPassword);
-                        std::cout << "User updated successfully." << std::endl;
-
-                        validChoice = true;
-                        break;
-                    }
-
-                    case 3: {
-                        // Delete User
-                        std::string username;
-                        std::cout << "Enter the username of the user to delete: ";
-                        std::cin >> username;
-
-                        school.deleteUser(username);
-
-                        std::cout << "User deleted successfully." << std::endl;
-                        validChoice = true;
-                        break;
-                    }
-
-                    case 4: {
-                        // View User Information
-                        std::string username;
-                        std::cout << "Enter the username of the user to view information: ";
-                        std::cin >> username;
-
-                        viewUserInformation("users.txt", username);
-                        validChoice = true;
-                        break;
-                    }
-
-                    case 5: {
-                        // Add Student
-                        std::string studentName;
-                        std::cout << "Enter the name of the student to add: ";
-                        std::cin >> studentName;
-
-                        school.addStudent(studentName);
-                        std::cout << "Student added successfully." << std::endl;
-                        validChoice = true;
-                        break;
-                    }
-                    case 6: {
-                        // Add Teacher
-                        std::string teacherName;
-                        std::cout << "Enter the name of the teacher to add: ";
-                        std::cin >> teacherName;
-
-                        // Create a new Teacher object
-                        Teacher newTeacher(teacherName);
-
-                        // Save teacher information to file
-                        std::ofstream staffFile;
-                        staffFile.exceptions(std::ofstream::failbit | std::ofstream::badbit);
-                        try {
-                            staffFile.open("staff.txt", std::ios::app);
-                            staffFile << "Teacher Name: " << newTeacher.getUsername() << "\n";
-                            staffFile.close();
-                            std::cout << "Teacher added successfully." << std::endl;
-                        }
-                        catch (const std::ofstream::failure& e) {
-                            std::cerr << "Error writing to staff.txt: " << e.what() << std::endl;
-                        }
-
-                        validChoice = true;
-                        break;
-                    }
-
-
-                    case 7: {
-                        // Add Class
-                        std::string className;
-                        std::cout << "Enter the name of the class to add: ";
-                        std::cin >> className;
-
-                        // Assuming you have an Admin object for the current admin
-                        if (currentUser->getUsername() == "admin") {
-                            Admin* admin = dynamic_cast<Admin*>(currentUser);
-                            admin->addClass(className);
-
-                            // Update the classes.txt file with the new class
-                            std::ofstream classesFile("classes.txt", std::ios::app);
-                            if (classesFile.is_open()) {
-                                classesFile << className << "\n";
-                                classesFile.close();
-                                std::cout << "Class added successfully." << std::endl;
-                            }
-                            else {
-                                throw std::runtime_error("Failed to open classes.txt");
-                            }
-                        }
-                        else {
-                            throw std::invalid_argument("Invalid user type for adding a class.");
-                        }
-
-                        validChoice = true;
-                        break;
-                    }
-
-                    case 8: {
-                        // Add Grade for Student
-                        std::string studentName;
-                        std::cout << "Enter the name of the student: ";
-                        std::cin >> studentName;
-
-                        // Find the student in the school
-                        StudentUser* student = school.findStudent(studentName);
-                        if (student) {
-                            // Display the student's classes
-                            const std::vector<std::string>& classes = student->getClasses();
-                            std::cout << "Classes: ";
-                            for (const std::string& className : classes) {
-                                std::cout << className << ", ";
-                            }
-                            std::cout << std::endl;
-
-                            // Select a class to add the grade
-                            std::string className;
-                            std::cout << "Enter the class name to add the grade: ";
-                            std::cin >> className;
-
-                            // Find the index of the class in the student's classes vector
-                            size_t index = -1;
-                            for (size_t i = 0; i < classes.size(); i++) {
-                                if (classes[i] == className) {
-                                    index = i;
-                                    break;
-                                }
-                            }
-
-                            if (index != -1) {
-                                // Prompt for the grade
-                                int grade;
-                                std::cout << "Enter the grade for " << className << ": ";
-                                std::cin >> grade;
-
-                                // Update the grade for the selected class
-                                student->updateGrade(index, grade);
-
-                                // Save the updated student information to the file
-                                std::ofstream studentFile("students.txt");
-                                if (studentFile.is_open()) {
-                                    for (const StudentUser& s : school.getStudents()) {
-                                        studentFile << s.getName() << ",";
-                                        const std::vector<std::string>& studentClasses = s.getClasses();
-                                        const std::vector<int>& studentGrades = s.getGrades();
-                                        for (size_t i = 0; i < studentClasses.size(); i++) {
-                                            studentFile << studentClasses[i] << ":" << studentGrades[i];
-                                            if (i < studentClasses.size() - 1) {
-                                                studentFile << ",";
-                                            }
-                                        }
-                                        studentFile << "\n";
-                                    }
-                                    studentFile.close();
-                                    std::cout << "Grade added successfully." << std::endl;
-                                }
-                                else {
-                                    throw std::runtime_error("Failed to open students.txt");
-                                }
-                            }
-                            else {
-                                throw std::invalid_argument("Class not found for the student.");
-                            }
-                        }
-                        else {
-                            throw std::invalid_argument("Student not found.");
-                        }
-
-                        validChoice = true;
-                        break;
-                    }
-
-                    case 9: {
-                        currentUser->signOut();
-                        break;
-
-                    }
-                    default:
-                        throw std::invalid_argument("Invalid choice. Please try again.");
-                    }
-                }
-                catch (const std::exception& e) {
-                    std::cerr << "Error: " << e.what() << std::endl;
-                }
-
-            }
-
-            std::cout << "Do you want to continue? (yes/no): ";
-            std::cin >> continueChoice;
-
-            if (continueChoice == "no") {
-                exitProgram = true;
-                exit(0);
-            }
+        if (continueChoice == "no") {
+            exitProgram = true;
+            exit(0);
         }
     }
+}
+
