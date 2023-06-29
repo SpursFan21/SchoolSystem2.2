@@ -302,6 +302,8 @@ public:
             std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
             std::cin >> choice;
 
+            system("cls");
+
             while (std::cin.fail() || choice < 1 || choice > 8) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -311,9 +313,10 @@ public:
 
             switch (choice) {
             case 1: {
+                system("cls");
                 std::string studentName;
                 std::string grades;
-
+     
                 std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
@@ -500,6 +503,7 @@ public:
                 break;
             }
             case 2: {
+                system("cls");
                 try {
                     std::ifstream file("grades.txt");
                     if (file.is_open()) {
@@ -558,6 +562,7 @@ public:
 
 
             case 3:
+                system("cls");
                 std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARENT TEACHER MESSAGE BORED" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
@@ -565,6 +570,7 @@ public:
                 sendMessage();
                 break;
             case 4:
+                system("cls");
                 std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARENT TEACHER MESSAGE BORED" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
@@ -572,6 +578,7 @@ public:
                 viewMessages();
                 break;
             case 5:
+                system("cls");
                 std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSTUDENT TEACHER MESSAGE BORED" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
@@ -579,7 +586,7 @@ public:
                 sendMessage1();
                 break;
             case 6:
-
+                system("cls");
                 std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSTUDENT TEACHER MESSAGE BORED" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
@@ -720,6 +727,7 @@ public:
 
             switch (choice) {
             case 1:
+                system("cls");
                 std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tYOUR STUDENTS REPORT CARD" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
@@ -727,6 +735,7 @@ public:
                 viewStudentReportCard();
                 break;
             case 2:
+                system("cls");
                 std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARENT TEACHER MESSAGE BOARD" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
@@ -734,6 +743,7 @@ public:
                 sendMessage();
                 break;
             case 3:
+                system("cls");
                 std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARENT TEACHER MESSAGE BOARD" << std::endl;
                 std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
@@ -927,13 +937,8 @@ public:
 
                 std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
                 std::cin >> choice;
+                system("cls");
 
-
-                if (std::cin.fail()) {
-                    std::cin.clear();               // Clear the error state
-                    std::cin.ignore(10000, '\n');   // Skip remaining input in the buffer
-                    throw std::runtime_error("Invalid choice. Please enter a valid integer.");
-                }
 
                 while (std::cin.fail() || choice < 1 || choice > 5) {
                     std::cin.clear();
@@ -942,11 +947,19 @@ public:
                     std::cin >> choice;
                 }
 
+                if (std::cin.fail()) {
+                    std::cin.clear();               // Clear the error state
+                    std::cin.ignore(10000, '\n');   // Skip remaining input in the buffer
+                    throw std::runtime_error("Invalid choice. Please enter a valid integer.");
+                }
+
                 switch (choice) {
                 case 1:
+                    system("cls");
                     viewGrades();
                     break;
                 case 2:
+                    system("cls");
                     std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                     std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSTUDENT TEACHER MESSAGE BOARD" << std::endl;
                     std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
@@ -954,6 +967,7 @@ public:
                     sendMessage1();
                     break;
                 case 3:
+                    system("cls");
                     std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                     std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSTUDENT TEACHER MESSAGE BOARD" << std::endl;
                     std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
@@ -968,36 +982,8 @@ public:
                     std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\texiting program ... " << std::endl;
                     std::cout << "\n\n" << std::endl;
                     exit(0);
-
                 default:
-                    int logFail = 0;
-
-                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
-                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       INVALID" << std::endl;
-                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
-
-
-                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid Input" << std::endl;
-                    std::cout << "\n" << std::endl;
-
-                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
-                    std::cout << "\n" << std::endl;
-                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
-                    std::cout << "\n" << std::endl;
-
-                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
-                    std::cin >> logFail;
-
-                    switch (logFail) {
-                    case 1:
-                        system("cls");
-                        break;
-
-                    case 2:
-                        system("cls");
-                        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
-                        exit(0);
-                    }
+                    std::cout << "Invalid choice. Please try again." << std::endl;
                     break;
                 }
             }
@@ -1338,6 +1324,7 @@ void relogMenu() { // :(
                 std::cout << "Invalid username or password" << std::endl;
             }
             break;
+        }
        
         case 2: {
             std::cout << "Exiting..." << std::endl;
@@ -1422,6 +1409,7 @@ int main()
 
     int choice;
 
+
     while (!loggedIn && !exitProgram) {
 
         system("cls");
@@ -1445,13 +1433,13 @@ int main()
         try {
             choice = std::stoi(input);
 
+
             while (std::cin.fail() || choice < 1 || choice > 2) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::cout << "Invalid input. Please enter a valid choice: ";
                 std::cin >> choice;
             }
-
             switch (choice) {
             case 1: {
                 system("cls");
@@ -1544,6 +1532,7 @@ int main()
 
             try {
                 choice = std::stoi(input);
+
 
                 while (std::cin.fail() || choice < 1 || choice > 13) {
                     std::cin.clear();
@@ -1802,7 +1791,9 @@ int main()
                             std::cin >> grade;
 
                             // Update the grade for the selected class
-                            student->updateGrade(index, grade);
+                         
+                            student->updateGrade(static_cast<int>(index), grade);
+
 
                             // Save the updated student information to the file
                             std::ofstream studentFile("students.txt");
@@ -1881,7 +1872,6 @@ int main()
 
                     std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t    New admin created successfully!" << std::endl;
                     system("cls");
-                    validChoice = true;
                     break;
                 }
                 case 12: {
