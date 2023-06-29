@@ -906,7 +906,7 @@ void viewUserInformation(const std::string& filename, const std::string& usernam
         inputFile.close();
 
         if (!userFound) {
-            std::cout << "User not found." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser not found." << std::endl;
         }
     }
     catch (const std::exception& e) {
@@ -929,7 +929,7 @@ void updateUserInformation(const std::string& username, const std::string& newUs
         inputFile.close();
     }
     else {
-        std::cerr << "Error opening the file" << std::endl;
+        std::cerr << "\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError opening the file" << std::endl;
         return;
     }
 
@@ -957,14 +957,14 @@ void updateUserInformation(const std::string& username, const std::string& newUs
             outputFile << record << std::endl;
         }
         outputFile.close();
-        std::cout << "User information updated successfully." << std::endl;
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser information updated successfully." << std::endl;
     }
     else {
-        std::cerr << "Error opening the file" << std::endl;
+        std::cerr << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tError opening the file" << std::endl;
     }
 
     if (!userFound) {
-        std::cout << "User not found." << std::endl;
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser not found." << std::endl;
     }
 }
 
@@ -1404,20 +1404,30 @@ int main()
 
                 case 2: {
                     // Update User
+                    system("cls");
+
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      UPDATE USER" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
                     std::string username;
-                    std::cout << "Enter the username of the user to update: ";
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the username of the user to update: ";
                     std::cin >> username;
+                    std::cout << "\n" << std::endl;
 
                     std::string newUsername;
-                    std::cout << "Enter the new username: ";
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the new username: ";
                     std::cin >> newUsername;
+                    std::cout << "\n" << std::endl;
 
                     std::string newPassword;
-                    std::cout << "Enter the new password: ";
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the new password: ";
                     std::cin >> newPassword;
+                    std::cout << "\n" << std::endl;
 
                     updateUserInformation(username, newUsername, newPassword);
-                    std::cout << "User updated successfully." << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser updated successfully." << std::endl;
 
                     validChoice = true;
                     break;
@@ -1426,12 +1436,21 @@ int main()
                 case 3: {
                     // Delete User
                     std::string username;
-                    std::cout << "Enter the username of the user to delete: ";
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      DELETE USER" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the username of the user to delete: ";
                     std::cin >> username;
+                    std::cout << "\n" << std::endl;
 
                     school.deleteUser(username);
 
-                    std::cout << "User deleted successfully." << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser deleted successfully." << std::endl;
+                    std::cout << "\n" << std::endl;
                     validChoice = true;
                     break;
                 }
@@ -1439,8 +1458,16 @@ int main()
                 case 4: {
                     // View User Information
                     std::string username;
-                    std::cout << "Enter the username of the user to view information: ";
+
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t VIEW USER INFORMATION" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the username of the user to view information: ";
                     std::cin >> username;
+                    std::cout << "\n" << std::endl;
 
                     viewUserInformation("users.txt", username);
                     validChoice = true;
@@ -1450,19 +1477,36 @@ int main()
                 case 5: {
                     // Add Student
                     std::string studentName;
-                    std::cout << "Enter the name of the student to add: ";
+
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      ADD STUDENT" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the name of the student to add: ";
                     std::cin >> studentName;
+                    std::cout << "\n" << std::endl;
+
 
                     school.addStudent(studentName);
-                    std::cout << "Student added successfully." << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tStudent added successfully." << std::endl;
                     validChoice = true;
                     break;
                 }
                 case 6: {
                     // Add Teacher
                     std::string teacherName;
-                    std::cout << "Enter the name of the teacher to add: ";
+
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      ADD TEACHER" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the name of the teacher to add: ";
                     std::cin >> teacherName;
+                    std::cout << "\n" << std::endl;
 
                     // Create a new Teacher object
                     Teacher newTeacher(teacherName);
@@ -1488,8 +1532,17 @@ int main()
                 case 7: {
                     // Add Class
                     std::string className;
-                    std::cout << "Enter the name of the class to add: ";
+
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      ADD CLASS" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the name of the class to add: ";
                     std::cin >> className;
+                    std::cout << "\n" << std::endl;
 
                     // Assuming you have an Admin object for the current admin
                     if (currentUser->getUsername() == "admin") {
@@ -1518,8 +1571,16 @@ int main()
                 case 8: {
                     // Add Grade for Student
                     std::string studentName;
-                    std::cout << "Enter the name of the student: ";
+
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      ADD CLASS" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the name of the student: ";
                     std::cin >> studentName;
+                    std::cout << "\n" << std::endl;
 
                     // Find the student in the school
                     StudentUser* student = school.findStudent(studentName);
@@ -1590,6 +1651,7 @@ int main()
                 }
 
                 case 9: {
+                    system("cls");
                     currentUser->signOut();
                     break;
 
@@ -1613,4 +1675,5 @@ int main()
         }
     }
 }
+
 
