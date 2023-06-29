@@ -1338,22 +1338,8 @@ void relogMenu() { // :(
                 std::cout << "Invalid username or password" << std::endl;
             }
             break;
-        }
+       
         case 2: {
-            // Create new admin logic
-            std::string newAdminUsername, newAdminPassword;
-            std::cout << "Enter new admin username: ";
-            std::cin >> newAdminUsername;
-            std::cout << "Enter new admin password: ";
-            std::cin >> newAdminPassword;
-
-            Admin* newAdmin = new Admin(newAdminUsername, newAdminPassword);
-            school.registerUser(newAdmin);
-
-            std::cout << "New admin created successfully!" << std::endl;
-            break;
-        }
-        case 3: {
             std::cout << "Exiting..." << std::endl;
             exit(0);
         }
