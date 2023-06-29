@@ -13,7 +13,7 @@
 #include <cstdlib>
 //This library generates numbers for ID code logic
 #include <random>
-//This libary is used to generate random selection in the parent class
+//This libary is used to generate time stamp for Message Boards
 #include <ctime>
 //This libary provides a collection of functions for performing various algorithms and operations on sequences of elements.
 #include <algorithm>
@@ -120,21 +120,59 @@ public:
     }
 
     void displayMenu() const override {
-        std::cout << "Admin Menu" << std::endl;
-        std::cout << "User Type: " << getType() << std::endl;
-        std::cout << "User ID: " << getId() << std::endl;
-        std::cout << "1. Register User" << std::endl;
-        std::cout << "2. Update User" << std::endl;
-        std::cout << "3. Delete User" << std::endl;
-        std::cout << "4. View User Information" << std::endl;
-        std::cout << "5. Add Student" << std::endl;
-        std::cout << "6. Add Teacher" << std::endl;
-        std::cout << "7. Add Class" << std::endl;
-        std::cout << "8. Add Grade for Student" << std::endl;
-        std::cout << "9. View Parent Teacher Message Board" << std::endl;
-        std::cout << "10. View Student Teacher Message Board" << std::endl;
-        std::cout << "11. Sign Out" << std::endl;
-        std::cout << "12. Exit Program " << std::endl;
+        system("cls");
+
+        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tADMIN MENU" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser Type: " << getType() << std::endl;
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser ID: " << getId() << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Register User" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Update User" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t3.) Delete User" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t4.) View User Information" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t5.) Add Student" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t6.) Add Teacher" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t7.) Add Class" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t8.) Add Grade For Student" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t9.) View Parent Teacher Message Board" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t10.) View Student Teacher Message Board" << std::endl;
+        std::cout << "\n" << std::endl;
+
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t11.) New Admin" << std::endl;
+        std::cout << "\n" << std::endl;
+
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t12.) Sign Out" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t13.) Exit Program " << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+
     }
 };
 
@@ -228,32 +266,65 @@ public:
 
 
     void displayMenu() const override {
-        int choice;
 
+        int choice;
+        system("cls");
         while (true) {
-            std::cout << "Teacher User Menu" << std::endl;
-            std::cout << "User Type: " << getType() << std::endl;
-            std::cout << "User ID: " << getId() << std::endl;
-            std::cout << "1. Add Grade for Student" << std::endl;
-            std::cout << "2. View Grades" << std::endl;
-            std::cout << "3. Send Parent Teacher Message" << std::endl;
-            std::cout << "4. View Parent Teacher Messages" << std::endl;
-            std::cout << "5. Send Student Teacher Message" << std::endl;
-            std::cout << "6. View Student Teacher Messages" << std::endl;
-            std::cout << "7. Sign Out" << std::endl;
-            std::cout << "8. Exit Program" << std::endl;
-            std::cout << "Enter your choice: ";
+          
+            std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t     TEACHER PORTAL" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+
+            std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser Type: " << getType() << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser ID: " << getId() << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1). Add Grade for Student" << std::endl;
+            std::cout << "\n" << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2). View Grades" << std::endl;
+            std::cout << "\n" << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t3.) Send Parent Teacher Message" << std::endl;
+            std::cout << "\n" << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t4.) View Parent Teacher Messages" << std::endl;
+            std::cout << "\n" << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t5.) Send Student Teacher Message" << std::endl;
+            std::cout << "\n" << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t6.) View Student Teacher Messages" << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t7.) Sign Out" << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t8.) Exit Program" << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
             std::cin >> choice;
+
+            while (std::cin.fail() || choice < 1 || choice > 8) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Invalid input. Please enter a valid choice: ";
+                std::cin >> choice;
+            }
 
             switch (choice) {
             case 1: {
                 std::string studentName;
                 std::string grades;
 
-                std::cout << "Enter student name: ";
-                std::cin >> studentName;
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
 
-                std::cout << "Enter grades (format: subject1:grade1 subject2:grade2 ...): ";
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter student name: ";
+                std::cin >> studentName;
+                std::cout << "\n" << std::endl;
+
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t   Enter grades below \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t(format: subject1:grade1)\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::getline(std::cin, grades);
 
@@ -286,10 +357,67 @@ public:
                         if (found) {
                             // Replace the original grades file with the updated temporary file
                             if (std::remove("grades.txt") == 0 && std::rename("temp_grades.txt", "grades.txt") == 0) {
-                                std::cout << "Grades updated successfully." << std::endl;
+
+                                int logFail = 0;
+
+                                system("cls");
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t     Grades updated successfully." << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                                std::cout << "\n" << std::endl;
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                                std::cin >> logFail;
+
+                                switch (logFail) {
+                                case 1:
+                                    system("cls");
+                                    break;
+
+                                case 2:
+                                    system("cls");
+                                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                                    exit(0);
+                                }
                             }
                             else {
-                                std::cout << "Failed to update grades." << std::endl;
+                                int logFail = 0;
+
+                                system("cls");
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Failed to update grades." << std::endl;
+
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                                std::cout << "\n" << std::endl;
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                                std::cin >> logFail;
+
+                                switch (logFail) {
+                                case 1:
+                                    system("cls");
+                                    break;
+
+                                case 2:
+                                    system("cls");
+                                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                                    exit(0);
+                                }
                             }
                         }
                         else {
@@ -298,10 +426,67 @@ public:
                             if (newGradeFile.is_open()) {
                                 newGradeFile << studentName << " " << grades << std::endl;
                                 newGradeFile.close();
-                                std::cout << "Grades added successfully." << std::endl;
+
+                                int logFail = 0;
+
+                                system("cls");
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t     Grades added successfully." << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                                std::cout << "\n" << std::endl;
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                                std::cin >> logFail;
+
+                                switch (logFail) {
+                                case 1:
+                                    system("cls");
+                                    break;
+
+                                case 2:
+                                    system("cls");
+                                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                                    exit(0);
+                                }
                             }
                             else {
-                                std::cout << "Failed to add grades." << std::endl;
+                                int logFail = 0;
+
+                                system("cls");
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       ADD GRADE" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Failed to add grades." << std::endl;
+
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                                std::cout << "\n" << std::endl;
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                                std::cout << "\n" << std::endl;
+
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                                std::cin >> logFail;
+
+                                switch (logFail) {
+                                case 1:
+                                    system("cls");
+                                    break;
+
+                                case 2:
+                                    system("cls");
+                                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                                    exit(0);
+                                }
                             }
                         }
                     }
@@ -314,15 +499,51 @@ public:
                 }
                 break;
             }
-
             case 2: {
                 try {
                     std::ifstream file("grades.txt");
                     if (file.is_open()) {
                         std::string line;
+                        bool isFirstLine = true;
+
+                        int lineCount = 0;
                         while (std::getline(file, line)) {
-                            std::cout << line << std::endl;
+                            if (isFirstLine) {
+                                system("cls");
+                                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       VIEW GRADES" << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------\n\n" << std::endl;
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t" << line << std::endl;
+                                isFirstLine = false;
+                            }
+                            else {
+                                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t" << line << std::endl;
+                            }
+                            lineCount++;
                         }
+
+                        for (int i = 0; i < 3 - lineCount; i++) {
+                            std::cout << std::endl;
+                        }
+                        std::cout << "\n\n" << std::endl;
+                        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+
+                        int logFail;
+                        std::cin >> logFail;
+
+                        switch (logFail) {
+                        case 1:
+                            system("cls");
+                            break;
+
+                        case 2:
+                            system("cls");
+                            std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                            exit(0);
+                        }
+
                         file.close();
                     }
                     else {
@@ -334,20 +555,35 @@ public:
                 }
                 break;
             }
+
+
             case 3:
-                std::cout << "Parent Teacher Message Bored" << std::endl;
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARENT TEACHER MESSAGE BORED" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\n" << std::endl;
                 sendMessage();
                 break;
             case 4:
-                std::cout << "Parent Teacher Message Bored" << std::endl;
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARENT TEACHER MESSAGE BORED" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\n" << std::endl;
                 viewMessages();
                 break;
             case 5:
-                std::cout << "Student Teacher Message Bored" << std::endl;
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSTUDENT TEACHER MESSAGE BORED" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\n" << std::endl;
                 sendMessage1();
-                    break;
+                break;
             case 6:
-                std::cout << "Student Teacher Message Bored" << std::endl;
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSTUDENT TEACHER MESSAGE BORED" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\n" << std::endl;
                 viewMessages1();
                 break;
             case 7:
@@ -356,8 +592,38 @@ public:
             case 8:
                 std::cout << "exiting program ... " << std::endl;
                 exit(0);
+
             default:
-                std::cout << "Invalid choice. Please try again." << std::endl;
+                int logFail = 0;
+
+                system("cls");
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       INVALID" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid Input" << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                std::cout << "\n" << std::endl;
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                std::cin >> logFail;
+
+                switch (logFail) {
+                case 1:
+                    system("cls");
+                    break;
+
+                case 2:
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                    exit(0);
+                }
                 break;
             }
         }
@@ -416,46 +682,83 @@ public:
 
     void displayMenu() const override {
         try {
-            std::cout << "Parent Menu" << std::endl;
-            std::cout << "User Type: Parent" << std::endl;
-            std::cout << "User ID: " << getId() << std::endl;
-            std::cout << "1. View Student Report Card" << std::endl;
-            std::cout << "2. Send Message" << std::endl;
-            std::cout << "3. View Messages" << std::endl;
-            std::cout << "4. Sign Out" << std::endl;;
-            std::cout << "5. Exit Program" << std::endl;
+
+            system("cls");
+            std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t     PARENT PORTAL" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser Type: Parent" << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser ID: " << getId() << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) View Student Reports" << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Send Parent Teacher Message" << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t3.) View Parent Teacher Messages" << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t4.) Sign Out" << std::endl;
+            std::cout << "\n" << std::endl;
+
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t5.) Exit Program" << std::endl;
+            std::cout << "\n" << std::endl;
 
             int choice;
-            std::cout << "Enter your choice: ";
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
             std::cin >> choice;
+
+            while (std::cin.fail() || choice < 1 || choice > 5) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Invalid input. Please enter a valid choice: ";
+                std::cin >> choice;
+            }
 
             switch (choice) {
             case 1:
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tYOUR STUDENTS REPORT CARD" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\n" << std::endl;
                 viewStudentReportCard();
                 break;
             case 2:
-                std::cout << "Parent Teacher Message Bored" << std::endl;
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARENT TEACHER MESSAGE BOARD" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\n" << std::endl;
                 sendMessage();
                 break;
             case 3:
-                std::cout << "Parent Teacher Message Bored" << std::endl;
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARENT TEACHER MESSAGE BOARD" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\n" << std::endl;
                 viewMessages();
                 break;
             case 4:
                 User::signOut(); // Call the signOut function of the User base class
                 return;
             case 5:
-                std::cout << "exiting program ... " << std::endl;
+                std::cout << "Exiting Program ... " << std::endl;//U
                 exit(0);
             default:
-                std::cout << "Invalid choice." << std::endl;
+                std::cout << "Invalid Input Try Again" << std::endl;
                 break;
-            }
 
-            // Prompt the parent user to continue
+            }
             char continueChoice;
-            std::cout << "Do you want to continue? (Y/N): ";
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\tDo you want to continue? (Y/N): ";
             std::cin >> continueChoice;
+
+            while (continueChoice != 'Y' && continueChoice != 'y' && continueChoice != 'N' && continueChoice != 'n') {
+                std::cout << "Invalid input. Please enter 'Y' or 'N': ";
+                std::cin >> continueChoice;
+            }
 
             if (continueChoice == 'Y' || continueChoice == 'y') {
                 displayMenu(); // Reload the parent menu
@@ -467,40 +770,21 @@ public:
     }
 
     void viewStudentReportCard() const {
-        try {
-            std::ifstream file("grades.txt");
-            if (!file.is_open()) {
-                throw std::runtime_error("Unable to open grades file.");
-            }
-
+        std::ifstream file("grades.txt"); // Open the grades.txt file
+        if (file.is_open()) {
             std::string line;
+            std::getline(file, line); // Read the first line
 
-            // Read the first line from the file
-            if (std::getline(file, line)) {
-                std::stringstream ss(line);
-                std::string studentInfo, classGrade;
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\tReport Card:\n";
+            std::cout << "\n" << std::endl;
+           
+            std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t" << line << std::endl; // Print the first line
+            std::cout << "\n" << std::endl;
 
-                std::getline(ss, studentInfo, ':');  // Extract the student information
-                std::cout << "Student: " << studentInfo << std::endl;
-
-                while (std::getline(ss, classGrade, ',')) {
-                    std::stringstream gradeSS(classGrade);
-                    std::string className, grade;
-
-                    std::getline(gradeSS, className, ':');  // Extract the class name
-                    std::getline(gradeSS, grade, ':');      // Extract the grade
-
-                    std::cout << className << ": " << grade << std::endl;
-                }
-            }
-            else {
-                std::cout << "No student grades found." << std::endl;
-            }
-
-            file.close();
+            file.close(); // Close the file
         }
-        catch (const std::exception& e) {
-            std::cout << "Error: " << e.what() << std::endl;
+        else {
+            std::cout << "Unable to open file!" << std::endl;
         }
     }
 
@@ -538,7 +822,34 @@ public:
 
             if (std::getline(ss, studentUsername, ':') && std::getline(ss, studentName, ':') && std::getline(ss, subjectGradePair)) {
                 if (studentUsername == getUsername()) {
-                    std::cout << "Grades for " << studentName << ": " << subjectGradePair << std::endl;
+
+                    int logFail = 0;
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      GRADES MENU" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+                    std::cout << "\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tGrades for " << studentName << ":\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t" << subjectGradePair << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                    std::cout << "\n" << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                    std::cin >> logFail;
+
+                    switch (logFail) {
+                    case 1:
+                        system("cls");
+                        break;
+
+                    case 2:
+                        system("cls");
+                        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                        exit(0);
+                    }
+                    system("cls");
                     return;
                 }
             }
@@ -587,18 +898,36 @@ public:
     void displayMenu() const override {
         try {
             int choice;
+            system("cls");
 
             while (true) {
-                std::cout << "Student User Menu" << std::endl;
-                std::cout << "User Type: " << getType() << std::endl;
-                std::cout << "User ID: " << getId() << std::endl;
-                std::cout << "1. View Grades" << std::endl;
-                std::cout << "2. Send Student Teacher Messages" << std::endl;
-                std::cout << "3. View Student Teachere Messages" << std::endl;
-                std::cout << "2. Sign Out" << std::endl;
-                std::cout << "3. Exit Program" << std::endl;
-                std::cout << "Enter your choice: ";
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t     STUDENT PORTAL" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser Type: " << getType() << std::endl;
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser ID: " << getId() << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) View Grades" << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Send Student Teacher Message" << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t3.) View Student Teacher Messages" << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t4.) Sign Out" << std::endl;
+                std::cout << "\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t5.) Exit Program" << std::endl;
+                std::cout << "\n\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
                 std::cin >> choice;
+
 
                 if (std::cin.fail()) {
                     std::cin.clear();               // Clear the error state
@@ -606,26 +935,69 @@ public:
                     throw std::runtime_error("Invalid choice. Please enter a valid integer.");
                 }
 
+                while (std::cin.fail() || choice < 1 || choice > 5) {
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "Invalid input. Please enter a valid choice: ";
+                    std::cin >> choice;
+                }
+
                 switch (choice) {
                 case 1:
                     viewGrades();
                     break;
                 case 2:
-                    std::cout << "Student Teacher Message Bored" << std::endl;
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSTUDENT TEACHER MESSAGE BOARD" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
                     sendMessage1();
                     break;
                 case 3:
-                    std::cout << "Student Teacher Message Bored" << std::endl;
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSTUDENT TEACHER MESSAGE BOARD" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear the input buffer
                     viewMessages1();
                     break;
                 case 4:
                     signOut();
                     return;
                 case 5:
-                    std::cout << "exiting program ... " << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\texiting program ... " << std::endl;
+                    std::cout << "\n\n" << std::endl;
                     exit(0);
+
                 default:
-                    std::cout << "Invalid choice. Please try again." << std::endl;
+                    int logFail = 0;
+
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t       INVALID" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+
+
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid Input" << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                    std::cout << "\n" << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                    std::cin >> logFail;
+
+                    switch (logFail) {
+                    case 1:
+                        system("cls");
+                        break;
+
+                    case 2:
+                        system("cls");
+                        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                        exit(0);
+                    }
                     break;
                 }
             }
@@ -912,22 +1284,28 @@ bool isValidCredentials(const std::string& username, const std::string& password
     return false;
 }
 
-void relogMenu() {
+void relogMenu() { // :(
     School school; // Creating an instance of the School class
 
     User* currentUser = nullptr;
     bool loggedIn = false;
     bool exitProgram = false;
-
     int choice;
 
     while (!loggedIn && !exitProgram) {
-        std::cout << "===== Start Menu =====" << std::endl;
-        std::cout << "1. Log in" << std::endl;
-        std::cout << "2. New Admin" << std::endl;
-        std::cout << "3. Exit" << std::endl;
-        std::cout << "======================" << std::endl;
-        std::cout << "Enter your choice: ";
+        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMAIN MENU" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+        std::cout << "\n\n" << std::endl;
+
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Log in" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
         std::cin >> choice;
 
         switch (choice) {
@@ -975,7 +1353,6 @@ void relogMenu() {
             std::cout << "New admin created successfully!" << std::endl;
             break;
         }
-
         case 3: {
             std::cout << "Exiting..." << std::endl;
             exit(0);
@@ -1060,12 +1437,21 @@ int main()
     int choice;
 
     while (!loggedIn && !exitProgram) {
-        std::cout << "===== Start Menu =====" << std::endl;
-        std::cout << "1. Log in" << std::endl;
-        std::cout << "2. New Admin" << std::endl;
-        std::cout << "3. Exit" << std::endl;
-        std::cout << "======================" << std::endl;
-        std::cout << "Enter your choice: ";
+
+        system("cls");
+        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMAIN MENU" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+        std::cout << "\n\n" << std::endl;
+
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Log in" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t3.) Exit" << std::endl;
+        std::cout << "\n" << std::endl;
+
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
 
         std::string input;
         std::cin >> input;
@@ -1073,13 +1459,29 @@ int main()
         try {
             choice = std::stoi(input);
 
+            while (std::cin.fail() || choice < 1 || choice > 2) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Invalid input. Please enter a valid choice: ";
+                std::cin >> choice;
+            }
+
             switch (choice) {
             case 1: {
+                system("cls");
                 std::string username, password;
-                std::cout << "Enter username: ";
-                std::cin >> username;
 
-                std::cout << "Enter password: ";
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      LOGIN MENU" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                std::cout << "\n\n" << std::endl;
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter username: ";
+                std::cin >> username;
+                std::cout << "\n" << std::endl;
+
+
+                std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter password: ";
                 std::cin >> password;
 
                 User* user = school.findUser(username);
@@ -1088,31 +1490,48 @@ int main()
                     loggedIn = true;
                 }
                 else {
-                    std::cout << "Invalid username or password" << std::endl;
+                    system("cls");
+                    int logFail = 0;
+
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      LOGIN MENU" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t      Invalid username or password" << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t1.) Return to Menu " << std::endl;
+                    std::cout << "\n" << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t2.) Exit " << std::endl;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tSelect Function: ";
+                    std::cin >> logFail;
+
+                    switch (logFail) {
+                    case 1:
+                        system("cls");
+                        break;
+                    case 2:
+                        system("cls");
+                        std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                        exit(0);
+                    }
+
                 }
                 break;
             }
+        
             case 2: {
-                // Create new admin logic
-                std::string newAdminUsername, newAdminPassword;
-                std::cout << "Enter new admin username: ";
-                std::cin >> newAdminUsername;
-                std::cout << "Enter new admin password: ";
-                std::cin >> newAdminPassword;
-
-                Admin* newAdmin = new Admin(newAdminUsername, newAdminPassword);
-                school.registerUser(newAdmin);
-
-                std::cout << "New admin created successfully!" << std::endl;
-                break;
-            }
-            case 3: {
-                std::cout << "Exiting..." << std::endl;
-                exitProgram = true;
-                break;
+                system("cls");
+                std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
+                exit(0);
             }
             default:
+
                 throw std::invalid_argument("Invalid choice");
+                system("cls");
             }
         }
         catch (const std::exception& e) {
@@ -1122,6 +1541,7 @@ int main()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
     }
+
 
 
     while (loggedIn) {
@@ -1139,18 +1559,39 @@ int main()
             try {
                 choice = std::stoi(input);
 
+                while (std::cin.fail() || choice < 1 || choice > 13) {
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "Invalid input. Please enter a valid choice: ";
+                    std::cin >> choice;
+                }
+
                 switch (choice) {
                 case 1: {
                     // Register User
                     std::string userType, username, password;
-                    std::cout << "Enter the user type (admin/teacher/parent/student): ";
-                    std::cin >> userType;
-                    std::cout << "Enter the username: ";
-                    std::cin >> username;
-                    std::cout << "Enter the password: ";
-                    std::cin >> password;
+                    system("cls");
 
-                    std::cout << "User registered successfully." << std::endl;
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t   REGISTER NEW USER" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the user type below\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t(admin/teacher/parent/student):\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+                    std::cin >> userType;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the username: ";
+                    std::cin >> username;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the password: ";
+                    std::cin >> password;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser registered successfully." << std::endl;
+                    std::cout << "\n\n" << std::endl;
 
                     // Save user information to file
                     std::ofstream outputFile("users.txt", std::ios::app);
@@ -1174,20 +1615,30 @@ int main()
 
                 case 2: {
                     // Update User
+                    system("cls");
+
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      UPDATE USER" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
                     std::string username;
-                    std::cout << "Enter the username of the user to update: ";
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the username of the user to update: ";
                     std::cin >> username;
+                    std::cout << "\n" << std::endl;
 
                     std::string newUsername;
-                    std::cout << "Enter the new username: ";
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the new username: ";
                     std::cin >> newUsername;
+                    std::cout << "\n" << std::endl;
 
                     std::string newPassword;
-                    std::cout << "Enter the new password: ";
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the new password: ";
                     std::cin >> newPassword;
+                    std::cout << "\n" << std::endl;
 
                     updateUserInformation(username, newUsername, newPassword);
-                    std::cout << "User updated successfully." << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser updated successfully." << std::endl;
 
                     validChoice = true;
                     break;
@@ -1196,9 +1647,18 @@ int main()
                 case 3: {
                     // Delete User
                     std::string username;
-                    std::cout << "Enter the username of the user to delete: ";
-                    std::cin >> username;
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      DELETE USER" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
 
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the username of the user to delete: ";
+                    std::cin >> username;
+                    std::cout << "\n" << std::endl;
+
+                   
                     school.deleteUser(username);
 
                     std::cout << "User deleted successfully." << std::endl;
@@ -1209,8 +1669,15 @@ int main()
                 case 4: {
                     // View User Information
                     std::string username;
-                    std::cout << "Enter the username of the user to view information: ";
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t VIEW USER INFORMATION" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the username of the user to view information: ";
                     std::cin >> username;
+                    std::cout << "\n" << std::endl;
 
                     viewUserInformation("users.txt", username);
                     validChoice = true;
@@ -1220,19 +1687,34 @@ int main()
                 case 5: {
                     // Add Student
                     std::string studentName;
-                    std::cout << "Enter the name of the student to add: ";
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      ADD STUDENT" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the name of the student to add: ";
                     std::cin >> studentName;
+                    std::cout << "\n" << std::endl;
 
                     school.addStudent(studentName);
-                    std::cout << "Student added successfully." << std::endl;
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tStudent added successfully." << std::endl;
                     validChoice = true;
                     break;
                 }
                 case 6: {
                     // Add Teacher
                     std::string teacherName;
-                    std::cout << "Enter the name of the teacher to add: ";
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      ADD TEACHER" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the name of the teacher to add: ";
                     std::cin >> teacherName;
+                    std::cout << "\n" << std::endl;
+
 
                     // Create a new Teacher object
                     Teacher newTeacher(teacherName);
@@ -1258,8 +1740,12 @@ int main()
                 case 7: {
                     // Add Class
                     std::string className;
-                    std::cout << "Enter the name of the class to add: ";
-                    std::cin >> className;
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      ADD CLASS" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
 
                     // Assuming you have an Admin object for the current admin
                     if (currentUser->getUsername() == "admin") {
@@ -1288,8 +1774,15 @@ int main()
                 case 8: {
                     // Add Grade for Student
                     std::string studentName;
-                    std::cout << "Enter the name of the student: ";
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      ADD CLASS" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the name of the student: ";
                     std::cin >> studentName;
+                    std::cout << "\n" << std::endl;
 
                     // Find the student in the school
                     StudentUser* student = school.findStudent(studentName);
@@ -1359,22 +1852,57 @@ int main()
                     break;
                 }
                 case 9: {
-                    std::cout << "Parent Teacher Message Bored" << std::endl;
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPARENT TEACHER MESSAGE BORED" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
                     viewMessages();
                     validChoice = true;
                     break;
                 }
                 case 10: {
-                    std::cout << "Student Teacher Message Bored" << std::endl;
+                    system("cls");
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSTUDENT TEACHER MESSAGE BORED" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
                     viewMessages1();
                     validChoice = true;
                     break;
                 }
                 case 11: {
-                    currentUser->signOut();
+                    // Create new admin logic
+                    std::string newAdminUsername, newAdminPassword;
+                    system("cls");
+
+                    std::cout << "\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t      CREATE ADMIN" << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
+                    std::cout << "\n\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tAdmin Username: ";
+                    std::cin >> newAdminUsername;
+                    std::cout << "\n" << std::endl;
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tAdmin Password: ";
+                    std::cin >> newAdminPassword;
+                    std::cout << "\n\n" << std::endl;
+
+                    Admin* newAdmin = new Admin(newAdminUsername, newAdminPassword);
+                    school.registerUser(newAdmin);
+
+                    std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t    New admin created successfully!" << std::endl;
+                    system("cls");
+                    validChoice = true;
                     break;
                 }
                 case 12: {
+                    currentUser->signOut();
+                    break;
+                }
+                case 13: {
                     std::cout << " Exiting Program ..." << std::endl;
                     exit(0);
                 }
@@ -1388,7 +1916,7 @@ int main()
 
         }
 
-        std::cout << "Do you want to continue? (yes/no): ";
+        std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\tDo you want to continue? (yes/no): ";
         std::cin >> continueChoice;
 
         if (continueChoice == "no") {
