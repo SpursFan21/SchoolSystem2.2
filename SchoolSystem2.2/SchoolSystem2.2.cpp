@@ -19,6 +19,11 @@
 #include <algorithm>
 //This libary provides a set of standard exception classes that can be used to handle runtime errors and exceptional conditions.
 #include <stdexcept>
+ // This library provides facilities for time-related operations, such as measuring time durations and creating delays.
+#include <chrono> 
+ // This library provides classes and functions for managing threads and synchronization primitives.
+#include <thread> 
+
 
 
 // Function to split a string into tokens
@@ -62,7 +67,7 @@ public:
     virtual void displayMenu() const = 0;
 
     void signOut() const {
-        std::cout << "Signing out..." << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSigning out..." << std::endl;
         // Perform any necessary cleanup or tasks before signing out
 
         relogMenu();
@@ -109,13 +114,13 @@ public:
             // Write the class name followed by a newline character
             classesFile << className << "\n";
             classesFile.close();
-            std::cout << "Class added successfully." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tClass added successfully." << std::endl;
 
             // Add the class to the admin's class list
             classes.push_back(className);
         }
         else {
-            std::cout << "Failed to open classes.txt" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tFailed to open classes.txt" << std::endl;
         }
     }
 
@@ -193,7 +198,7 @@ public:
 
     void sendMessage() const { // Parent Teacher Message Boards
         std::string message;
-        std::cout << "Enter your message: ";
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter your message: ";
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::getline(std::cin, message);
 
@@ -206,10 +211,10 @@ public:
         if (file.is_open()) {
             file << username << " - " << message << " [" << timestamp << "]" << std::endl;
             file.close();
-            std::cout << "Message sent successfully." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tMessage sent successfully." << std::endl;
         }
         else {
-            std::cout << "Failed to send message." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tFailed to send message." << std::endl;
         }
     }
 
@@ -223,13 +228,13 @@ public:
             file.close();
         }
         else {
-            std::cout << "No messages available." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tNo messages available." << std::endl;
         }
     }
 
     void sendMessage1() const { // Student and Teacher Message Boards
         std::string message;
-        std::cout << "Enter your message: ";
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter your message: ";
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::getline(std::cin, message);
 
@@ -242,10 +247,10 @@ public:
         if (file.is_open()) {
             file << username << " - " << message << " [" << timestamp << "]" << std::endl;
             file.close();
-            std::cout << "Message sent successfully." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tMessage sent successfully." << std::endl;
         }
         else {
-            std::cout << "Failed to send message." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tFailed to send message." << std::endl;
         }
     }
 
@@ -260,7 +265,7 @@ public:
             file.close();
         }
         else {
-            std::cout << "No messages available." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tNo messages available." << std::endl;
         }
     }
 
@@ -307,7 +312,7 @@ public:
             while (std::cin.fail() || choice < 1 || choice > 8) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Invalid input. Please enter a valid choice: ";
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid input. Please enter a valid choice: ";
                 std::cin >> choice;
             }
 
@@ -494,11 +499,11 @@ public:
                         }
                     }
                     else {
-                        throw std::runtime_error("Unable to open file.");
+                        throw std::runtime_error("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUnable to open file.");
                     }
                 }
                 catch (const std::exception& e) {
-                    std::cout << "Error: " << e.what() << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError: " << e.what() << std::endl;
                 }
                 break;
             }
@@ -551,11 +556,11 @@ public:
                         file.close();
                     }
                     else {
-                        throw std::runtime_error("Unable to open file.");
+                        throw std::runtime_error("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUnable to open file.");
                     }
                 }
                 catch (const std::exception& e) {
-                    std::cout << "Error: " << e.what() << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError: " << e.what() << std::endl;
                 }
                 break;
             }
@@ -597,7 +602,7 @@ public:
                 signOut(); // Call the signOut function to sign out and return to the login menu
                 return;
             case 8:
-                std::cout << "exiting program ... " << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\texiting program ... " << std::endl;
                 exit(0);
 
             default:
@@ -652,7 +657,7 @@ public:
 
     void sendMessage() const {
         std::string message;
-        std::cout << "Enter your message: ";
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter your message: ";
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::getline(std::cin, message);
 
@@ -665,10 +670,10 @@ public:
         if (file.is_open()) {
             file << username << " - " << message << " [" << timestamp << "]" << std::endl;
             file.close();
-            std::cout << "Message sent successfully." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tMessage sent successfully." << std::endl;
         }
         else {
-            std::cout << "Failed to send message." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tFailed to send message." << std::endl;
         }
     }
 
@@ -683,7 +688,7 @@ public:
             file.close();
         }
         else {
-            std::cout << "No messages available." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tNo messages available." << std::endl;
         }
     }
 
@@ -721,7 +726,7 @@ public:
             while (std::cin.fail() || choice < 1 || choice > 5) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Invalid input. Please enter a valid choice: ";
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid input. Please enter a valid choice: ";
                 std::cin >> choice;
             }
 
@@ -754,10 +759,10 @@ public:
                 User::signOut(); // Call the signOut function of the User base class
                 return;
             case 5:
-                std::cout << "Exiting Program ... " << std::endl;//U
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting Program ... " << std::endl;//U
                 exit(0);
             default:
-                std::cout << "Invalid Input Try Again" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid Input Try Again" << std::endl;
                 break;
 
             }
@@ -766,7 +771,7 @@ public:
             std::cin >> continueChoice;
 
             while (continueChoice != 'Y' && continueChoice != 'y' && continueChoice != 'N' && continueChoice != 'n') {
-                std::cout << "Invalid input. Please enter 'Y' or 'N': ";
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid input. Please enter 'Y' or 'N': ";
                 std::cin >> continueChoice;
             }
 
@@ -775,7 +780,7 @@ public:
             }
         }
         catch (const std::exception& e) {
-            std::cout << "Error: " << e.what() << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError: " << e.what() << std::endl;
         }
     }
 
@@ -794,7 +799,7 @@ public:
             file.close(); // Close the file
         }
         else {
-            std::cout << "Unable to open file!" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUnable to open file!" << std::endl;
         }
     }
 
@@ -865,12 +870,12 @@ public:
             }
         }
 
-        std::cout << "No grades found for " << getUsername() << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tNo grades found for " << getUsername() << std::endl;
     }
 
     void sendMessage1() const { // Student and Teacher Message Boards
         std::string message;
-        std::cout << "Enter your message: ";
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter your message: ";
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::getline(std::cin, message);
 
@@ -883,10 +888,10 @@ public:
         if (file.is_open()) {
             file << username << " - " << message << " [" << timestamp << "]" << std::endl;
             file.close();
-            std::cout << "Message sent successfully." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tMessage sent successfully." << std::endl;
         }
         else {
-            std::cout << "Failed to send message." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tFailed to send message." << std::endl;
         }
     }
 
@@ -901,7 +906,7 @@ public:
             file.close();
         }
         else {
-            std::cout << "No messages available." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tNo messages available." << std::endl;
         }
     }
 
@@ -943,14 +948,14 @@ public:
                 while (std::cin.fail() || choice < 1 || choice > 5) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    std::cout << "Invalid input. Please enter a valid choice: ";
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid input. Please enter a valid choice: ";
                     std::cin >> choice;
                 }
 
                 if (std::cin.fail()) {
                     std::cin.clear();               // Clear the error state
                     std::cin.ignore(10000, '\n');   // Skip remaining input in the buffer
-                    throw std::runtime_error("Invalid choice. Please enter a valid integer.");
+                    throw std::runtime_error("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid choice. Please enter a valid integer.");
                 }
 
                 switch (choice) {
@@ -983,13 +988,13 @@ public:
                     std::cout << "\n\n" << std::endl;
                     exit(0);
                 default:
-                    std::cout << "Invalid choice. Please try again." << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid choice. Please try again." << std::endl;
                     break;
                 }
             }
         }
         catch (const std::exception& e) {
-            std::cout << "Error: " << e.what() << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError: " << e.what() << std::endl;
         }
     }
 
@@ -1013,10 +1018,13 @@ private:
 class School
 {
 private:
+ 
+
+public:
     std::vector<User*> users;
     std::vector<StudentUser> students;
 
-public:
+
     ~School() {
         // Clean up dynamically allocated user objects
         for (User* user : users) {
@@ -1053,11 +1061,11 @@ public:
                 users.erase(it);
             }
             else {
-                throw std::runtime_error("User not found.");
+                throw std::runtime_error("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser not found.");
             }
         }
         catch (const std::exception& e) {
-            std::cout << "Error: " << e.what() << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError: " << e.what() << std::endl;
         }
     }
 
@@ -1075,10 +1083,10 @@ public:
                     return &student;
                 }
             }
-            throw std::runtime_error("Student not found.");
+            throw std::runtime_error("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tStudent not found.");
         }
         catch (const std::exception& e) {
-            std::cout << "Error: " << e.what() << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError: " << e.what() << std::endl;
             return nullptr;
         }
     }
@@ -1094,7 +1102,7 @@ void viewMessages() {
         file.close();
     }
     else {
-        std::cout << "No messages available." << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tNo messages available." << std::endl;
     }
 }
 
@@ -1108,42 +1116,45 @@ void viewMessages1() {
         file.close();
     }
     else {
-        std::cout << "No messages available." << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tNo messages available." << std::endl;
     }
 }
 
 
 // Function to view user information from the file
 void viewUserInformation(const std::string& filename, const std::string& username) {
-    try {
-        std::ifstream inputFile(filename);
-        if (!inputFile) {
-            throw std::runtime_error("Failed to open the file");
+    std::ifstream file(filename);
+    if (!file) {
+        std::cout << "Error opening file: " << filename << std::endl;
+        return;
+    }
+
+    std::string line;
+    bool userFound = false;
+
+    while (std::getline(file, line)) {
+        // Split the line by comma
+        std::stringstream ss(line);
+        std::vector<std::string> tokens;
+        std::string token;
+        while (std::getline(ss, token, ',')) {
+            tokens.push_back(token);
         }
 
-        std::string line;
-        bool userFound = false;
-
-        while (std::getline(inputFile, line)) {
-            std::vector<std::string> userData = splitString(line, ',');
-            if (userData.size() >= 3 && userData[1] == username) {
-                // Display the user information
-                std::cout << "Username: " << userData[1] << std::endl;
-                std::cout << "Password: " << userData[2] << std::endl;
-                userFound = true;
-                break;
-            }
-        }
-
-        inputFile.close();
-
-        if (!userFound) {
-            std::cout << "User not found." << std::endl;
+        if (tokens.size() >= 2 && tokens[1] == username) {
+            userFound = true;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUsername: " << tokens[1] << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser Class: " << tokens[0] << std::endl;
+            // Display other user information based on the format of the file
+            break;
         }
     }
-    catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
+
+    if (!userFound) {
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser not found." << std::endl;
     }
+
+    file.close();
 }
 
 
@@ -1161,7 +1172,7 @@ void updateUserInformation(const std::string& username, const std::string& newUs
         inputFile.close();
     }
     else {
-        std::cerr << "Error opening the file" << std::endl;
+        std::cerr << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError opening the file" << std::endl;
         return;
     }
 
@@ -1189,14 +1200,14 @@ void updateUserInformation(const std::string& username, const std::string& newUs
             outputFile << record << std::endl;
         }
         outputFile.close();
-        std::cout << "User information updated successfully." << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser information updated successfully." << std::endl;
     }
     else {
-        std::cerr << "Error opening the file" << std::endl;
+        std::cerr << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError opening the file" << std::endl;
     }
 
     if (!userFound) {
-        std::cout << "User not found." << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser not found." << std::endl;
     }
 }
 
@@ -1204,13 +1215,13 @@ void updateUserInformation(const std::string& username, const std::string& newUs
 void deleteUserFromFile(const std::string& username) {
     std::ifstream inFile("users.txt");
     if (!inFile) {
-        std::cout << "Error opening file." << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError opening file." << std::endl;
         return;
     }
 
     std::ofstream outFile("users.txt");
     if (!outFile) {
-        std::cout << "Error creating temporary file." << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError creating temporary file." << std::endl;
         inFile.close();
         return;
     }
@@ -1235,19 +1246,19 @@ void deleteUserFromFile(const std::string& username) {
     // Delete the original file and rename the temporary file to users.txt
     if (userFound) {
         if (std::remove("users.txt") != 0) {
-            std::cout << "Error deleting file." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError deleting file." << std::endl;
             return;
         }
 
         if (std::rename("temp.txt", "users.txt") != 0) {
-            std::cout << "Error renaming file." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError renaming file." << std::endl;
             return;
         }
 
-        std::cout << "User deleted successfully." << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser deleted successfully." << std::endl;
     }
     else {
-        std::cout << "User not found." << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser not found." << std::endl;
     }
 }
 
@@ -1262,7 +1273,7 @@ bool isValidCredentials(const std::string& username, const std::string& password
                 return true;
             }
             else {
-                std::cout << "Debug - Username: " << userData[1] << ", Password: " << userData[2] << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tDebug - Username: " << userData[1] << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPassword: " << userData[2] << std::endl;
             }
         }
         userFile.close();
@@ -1297,21 +1308,21 @@ void relogMenu() { // :(
         switch (choice) {
         case 1: {
             std::string username, password;
-            std::cout << "Enter username: ";
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter username: ";
             try {
                 std::cin >> username;
             }
             catch (const std::exception& e) {
-                std::cerr << "Error: " << e.what() << std::endl;
+                std::cerr << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError: " << e.what() << std::endl;
                 break;
             }
 
-            std::cout << "Enter password: ";
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter password: ";
             try {
                 std::cin >> password;
             }
             catch (const std::exception& e) {
-                std::cerr << "Error: " << e.what() << std::endl;
+                std::cerr << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError: " << e.what() << std::endl;
                 break;
             }
 
@@ -1321,17 +1332,17 @@ void relogMenu() { // :(
                 loggedIn = true;
             }
             else {
-                std::cout << "Invalid username or password" << std::endl;
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid username or password" << std::endl;
             }
             break;
         }
        
         case 2: {
-            std::cout << "Exiting..." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
             exit(0);
         }
         default:
-            std::cout << "Invalid choice" << std::endl;
+            std::cout << "I\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tnvalid choice" << std::endl;
             break;
         }
     }
@@ -1340,7 +1351,7 @@ void relogMenu() { // :(
 
 void exitProgram()
 {
-    std::cout << "Exiting..." << std::endl;
+    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting..." << std::endl;
     exit(0);
 }
 
@@ -1399,7 +1410,7 @@ int main()
         userFile.close();
     }
     else {
-        std::cout << "Failed to open users.txt" << std::endl;
+        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tFailed to open users.txt" << std::endl;
         return 1;
     }
 
@@ -1437,7 +1448,7 @@ int main()
             while (std::cin.fail() || choice < 1 || choice > 2) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Invalid input. Please enter a valid choice: ";
+                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid input. Please enter a valid choice: ";
                 std::cin >> choice;
             }
             switch (choice) {
@@ -1504,12 +1515,12 @@ int main()
             }
             default:
 
-                throw std::invalid_argument("Invalid choice");
+                throw std::invalid_argument("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid choice");
                 system("cls");
             }
         }
         catch (const std::exception& e) {
-            std::cout << "Error: " << e.what() << ". Please enter a valid choice." << std::endl;
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError: " << e.what() << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPlease enter a valid choice." << std::endl;
             // Clear the input stream
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -1526,7 +1537,7 @@ int main()
         while (!validChoice) {
             // ...
 
-            std::cout << "Enter your choice: ";
+            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter your choice: ";
             std::string input;
             std::cin >> input;
 
@@ -1537,7 +1548,7 @@ int main()
                 while (std::cin.fail() || choice < 1 || choice > 13) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    std::cout << "Invalid input. Please enter a valid choice: ";
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid input. Please enter a valid choice: ";
                     std::cin >> choice;
                 }
 
@@ -1573,10 +1584,10 @@ int main()
                     if (outputFile.is_open()) {
                         outputFile << userType << "," << username << "," << password << std::endl;
                         outputFile.close();
-                        std::cout << "User information saved to users.txt" << std::endl;
+                        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser information saved to users.txt" << std::endl;
                     }
                     else {
-                        throw std::runtime_error("Error opening the file");
+                        throw std::runtime_error("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError opening the file");
                     }
 
                     if (continueChoice == "no") {
@@ -1618,7 +1629,7 @@ int main()
                     validChoice = true;
                     break;
                 }
-
+       
                 case 3: {
                     // Delete User
                     std::string username;
@@ -1628,15 +1639,21 @@ int main()
                     std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                     std::cout << "\n\n" << std::endl;
 
-
                     std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the username of the user to delete: ";
                     std::cin >> username;
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Clear the input buffer
+
                     std::cout << "\n" << std::endl;
 
-                   
-                    school.deleteUser(username);
+                    User* user = school.findUser(username);
+                    if (user != nullptr) {
+                        school.deleteUser(username);
+                        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser deleted successfully." << std::endl;
+                    }
+                    else {
+                        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError:\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser not found." << std::endl;
+                    }
 
-                    std::cout << "User deleted successfully." << std::endl;
                     validChoice = true;
                     break;
                 }
@@ -1659,6 +1676,7 @@ int main()
                     break;
                 }
 
+
                 case 5: {
                     // Add Student
                     std::string studentName;
@@ -1674,6 +1692,10 @@ int main()
 
                     school.addStudent(studentName);
                     std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t\tStudent added successfully." << std::endl;
+
+                    // Delay to allow the user to read the previous output
+                    std::this_thread::sleep_for(std::chrono::seconds(3));
+
                     validChoice = true;
                     break;
                 }
@@ -1701,17 +1723,19 @@ int main()
                         staffFile.open("staff.txt", std::ios::app);
                         staffFile << "Teacher Name: " << newTeacher.getUsername() << "\n";
                         staffFile.close();
-                        std::cout << "Teacher added successfully." << std::endl;
+                        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tTeacher added successfully." << std::endl;
                     }
                     catch (const std::ofstream::failure& e) {
-                        std::cerr << "Error writing to staff.txt: " << e.what() << std::endl;
+                        std::cerr << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError writing to staff.txt: " << e.what() << std::endl;
                     }
+
+                    // Delay to allow the user to read the previous output
+                    std::this_thread::sleep_for(std::chrono::seconds(3));
 
                     validChoice = true;
                     break;
                 }
-
-
+             
                 case 7: {
                     // Add Class
                     std::string className;
@@ -1721,10 +1745,12 @@ int main()
                     std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----------------------" << std::endl;
                     std::cout << "\n\n" << std::endl;
 
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the class name: ";
+                    std::cin.ignore(); // Ignore any residual newline characters from previous input
+                    std::getline(std::cin, className);  // Read the class name from user input
 
                     // Assuming you have an Admin object for the current admin
-                    if (currentUser->getUsername() == "admin") {
-                        Admin* admin = dynamic_cast<Admin*>(currentUser);
+                    if (Admin* admin = dynamic_cast<Admin*>(currentUser)) {
                         admin->addClass(className);
 
                         // Update the classes.txt file with the new class
@@ -1732,19 +1758,20 @@ int main()
                         if (classesFile.is_open()) {
                             classesFile << className << "\n";
                             classesFile.close();
-                            std::cout << "Class added successfully." << std::endl;
+                            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tClass added successfully." << std::endl;
                         }
                         else {
-                            throw std::runtime_error("Failed to open classes.txt");
+                            throw std::runtime_error("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tFailed to open classes.txt");
                         }
                     }
                     else {
-                        throw std::invalid_argument("Invalid user type for adding a class.");
+                        throw std::invalid_argument("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid user type for adding a class.");
                     }
 
                     validChoice = true;
                     break;
                 }
+
 
                 case 8: {
                     // Add Grade for Student
@@ -1764,7 +1791,7 @@ int main()
                     if (student) {
                         // Display the student's classes
                         const std::vector<std::string>& classes = student->getClasses();
-                        std::cout << "Classes: ";
+                        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tClasses: ";
                         for (const std::string& className : classes) {
                             std::cout << className << ", ";
                         }
@@ -1772,7 +1799,7 @@ int main()
 
                         // Select a class to add the grade
                         std::string className;
-                        std::cout << "Enter the class name to add the grade: ";
+                        std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the class name to add the grade: ";
                         std::cin >> className;
 
                         // Find the index of the class in the student's classes vector
@@ -1787,7 +1814,7 @@ int main()
                         if (index != -1) {
                             // Prompt for the grade
                             int grade;
-                            std::cout << "Enter the grade for " << className << ": ";
+                            std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnter the grade for " << className << ": ";
                             std::cin >> grade;
 
                             // Update the grade for the selected class
@@ -1811,18 +1838,18 @@ int main()
                                     studentFile << "\n";
                                 }
                                 studentFile.close();
-                                std::cout << "Grade added successfully." << std::endl;
+                                std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tGrade added successfully." << std::endl;
                             }
                             else {
-                                throw std::runtime_error("Failed to open students.txt");
+                                throw std::runtime_error("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tFailed to open students.txt");
                             }
                         }
                         else {
-                            throw std::invalid_argument("Class not found for the student.");
+                            throw std::invalid_argument("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tClass not found for the student.");
                         }
                     }
                     else {
-                        throw std::invalid_argument("Student not found.");
+                        throw std::invalid_argument("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tStudent not found.");
                     }
 
                     validChoice = true;
@@ -1871,7 +1898,7 @@ int main()
                     school.registerUser(newAdmin);
 
                     std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\t    New admin created successfully!" << std::endl;
-                    system("cls");
+                    validChoice = true;
                     break;
                 }
                 case 12: {
@@ -1879,15 +1906,15 @@ int main()
                     break;
                 }
                 case 13: {
-                    std::cout << " Exiting Program ..." << std::endl;
+                    std::cout << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tExiting Program ..." << std::endl;
                     exit(0);
                 }
                 default:
-                    throw std::invalid_argument("Invalid choice. Please try again.");
+                    throw std::invalid_argument("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tInvalid choice. Please try again.");
                 }
             }
             catch (const std::exception& e) {
-                std::cerr << "Error: " << e.what() << std::endl;
+                std::cerr << "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tError: " << e.what() << std::endl;
             }
 
         }
@@ -1895,7 +1922,7 @@ int main()
         std::cout << "\t\t\t\t\t\t\t\t\t\t\t\t\tDo you want to continue? (yes/no): ";
         std::cin >> continueChoice;
 
-        if (continueChoice == "no") {
+        if (continueChoice == "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tno") {
             exitProgram = true;
             exit(0);
         }
